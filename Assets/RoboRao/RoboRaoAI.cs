@@ -25,19 +25,23 @@ public class RoboRaoAI : MonoBehaviour
 
 
         navMeshAgent.SetDestination(target.position + off);
+
         float distanceFromPlayer = Vector3.Distance(navMeshAgent.transform.position, target.position);
-        if (distanceFromPlayer < navMeshAgent.stoppingDistance)
+        if (distanceFromPlayer <= navMeshAgent.stoppingDistance)
         {
             navMeshAgent.isStopped = true;
-            //navMeshAgent.Move(off);
             Debug.Log("reached the player");
 
         }
         else
         {
             navMeshAgent.isStopped = false;
+
             
             Debug.Log("Not reached the player");
+
+
+            navMeshAgent.SetDestination(target.position);
 
         }
     }
