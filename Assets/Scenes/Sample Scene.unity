@@ -2231,7 +2231,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 253290317}
-  offset: 10
+  offset: 2
 --- !u!1001 &888168944
 PrefabInstance:
   m_ObjectHideFlags: 0

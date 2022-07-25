@@ -24,7 +24,7 @@ public class RoboRaoAI : MonoBehaviour
         Vector3 off = new Vector3(x_offset, 0, z_offset);
 
 
-        navMeshAgent.SetDestination(target.position + off);
+        //navMeshAgent.SetDestination(target.position + off);
 
         float distanceFromPlayer = Vector3.Distance(navMeshAgent.transform.position, target.position);
         if (distanceFromPlayer <= navMeshAgent.stoppingDistance)
@@ -41,7 +41,7 @@ public class RoboRaoAI : MonoBehaviour
             Debug.Log("Not reached the player");
 
 
-            navMeshAgent.SetDestination(target.position);
+            navMeshAgent.SetDestination(target.position + off);
 
         }
     }
