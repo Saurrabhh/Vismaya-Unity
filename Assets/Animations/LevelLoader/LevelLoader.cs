@@ -7,20 +7,28 @@ public class LevelLoader : MonoBehaviour
 {
     public Animator transition;
     public float transitionTime = 1f;
+    AudioSource audioSource;
+    [SerializeField] AudioClip transitionAudio;
+    bool makingTransition = false;
 
+    void Start()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
 
-    // Update is called once per frame
     void Update()
     {
         if (Input.GetKey(KeyCode.T))
-        {
+        { 
             LoadNextLevel();
         }
     }
 
     void LoadNextLevel()
     {
-        StartCoroutine(LoadLevel(SceneManager.GetActiveScene().buildIndex + 1));
+        makingTransition = true;
+        audioSource.Stop();
+        audioSource.PlayOneShot(transitionAudio);
         int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
         int nextSceneIndex = currentSceneIndex + 1;
         if (nextSceneIndex == SceneManager.sceneCountInBuildSettings)
