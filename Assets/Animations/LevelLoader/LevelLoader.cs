@@ -24,17 +24,15 @@ public class LevelLoader : MonoBehaviour
         }
     }
 
-    void LoadNextLevel()
+    public void LoadNextLevel()
     {
         makingTransition = true;
         audioSource.Stop();
         audioSource.PlayOneShot(transitionAudio);
         int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
-        int nextSceneIndex = currentSceneIndex + 1;
-        if (nextSceneIndex == SceneManager.sceneCountInBuildSettings)
-        {
-            nextSceneIndex = 0;
-        }
+        int totalScenes = SceneManager.sceneCountInBuildSettings;
+        int nextSceneIndex = (currentSceneIndex + 1) % totalScenes;
+    
         StartCoroutine(LoadLevel(nextSceneIndex));
     }
 
