@@ -8,11 +8,11 @@ public class RoboRaoAI : MonoBehaviour
     [SerializeField] Transform target;
     NavMeshAgent navMeshAgent;
     [SerializeField] int offset = 1;
+    public GameObject roboRaocanvas;
     void Start()
     {
         navMeshAgent = GetComponent<NavMeshAgent>();
-        
-
+       
     }
 
    
@@ -31,7 +31,7 @@ public class RoboRaoAI : MonoBehaviour
         {
             navMeshAgent.isStopped = true;
             Debug.Log("reached the player");
-
+            
         }
         else
         {
