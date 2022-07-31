@@ -1323,6 +1323,11 @@ Transform:
   m_Father: {fileID: 2114283753834967213}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1209169122 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1262129486, guid: 6434170e50bf7a648921922c3a4b4d6a, type: 3}
+  m_PrefabInstance: {fileID: 1864575844}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1221041499
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1928,6 +1933,24 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!1 &1631743920 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1069015205236512560, guid: 009a2af69c18e9a4d9cf885064ae7e3e, type: 3}
+  m_PrefabInstance: {fileID: 436573706}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &1631743927
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1631743920}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 2.3642178, z: 1.4710064}
+  m_Center: {x: 0, y: 0.6821091, z: 0.23550346}
 --- !u!4 &1723663354 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 160151311239614917, guid: 009a2af69c18e9a4d9cf885064ae7e3e, type: 3}
@@ -2005,6 +2028,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2044159507}
     m_Modifications:
+    - target: {fileID: 1262129486, guid: 6434170e50bf7a648921922c3a4b4d6a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4709266872836733960, guid: 6434170e50bf7a648921922c3a4b4d6a, type: 3}
+      propertyPath: roboRaocanvas
+      value: 
+      objectReference: {fileID: 1209169122}
     - target: {fileID: 7725418988530962916, guid: 6434170e50bf7a648921922c3a4b4d6a, type: 3}
       propertyPath: m_Name
       value: RoboRao

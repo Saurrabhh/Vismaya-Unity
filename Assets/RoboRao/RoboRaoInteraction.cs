@@ -9,17 +9,8 @@ public class RoboRaoInteraction : MonoBehaviour
     // Start is called before the first frame update
     
     
-    GameObject roboRaocanvas;
-    void Start()
-    {
-        roboRaocanvas = GetComponent<GameObject>();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    [SerializeField]GameObject roboRaocanvas;
+   
 
     private void OnCollisionEnter(Collision collision)
     {
