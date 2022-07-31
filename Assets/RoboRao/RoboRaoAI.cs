@@ -5,56 +5,51 @@ using UnityEngine.AI;
 
 public class RoboRaoAI : MonoBehaviour
 {
-    [SerializeField] Transform target;
+    [SerializeField] Transform player;
+    [SerializeField] float offsetDistance = 1;
+    [SerializeField] float interactDistance = 0.8f;
+    [SerializeField] float offsetAngle = 45;
+    [SerializeField] GameObject roboRaoCanvas;
+
     NavMeshAgent navMeshAgent;
-    [SerializeField] int offset = 1;
-    public GameObject roboRaocanvas;
+    Vector3 offset;
+    float distanceFromPlayer;
     void Start()
     {
         navMeshAgent = GetComponent<NavMeshAgent>();
-       
+        float z_offset = Mathf.Cos(Mathf.Deg2Rad * (player.eulerAngles.y - offsetAngle)) * offsetDistance;
+        float x_offset = Mathf.Sin(Mathf.Deg2Rad * (player.eulerAngles.y - offsetAngle)) * offsetDistance;
+        offset = new Vector3(x_offset, 0, z_offset);
+
     }
 
    
     void Update()
     {
-        float z_offset = Mathf.Cos(Mathf.Deg2Rad * (target.eulerAngles.y - 45)) * offset;
-        float x_offset = Mathf.Sin(Mathf.Deg2Rad * (target.eulerAngles.y - 45)) * offset;
-        Debug.Log(x_offset + " " + z_offset);
-        Vector3 off = new Vector3(x_offset, 0, z_offset);
+        FollowPlayer();
+        InteracteWithPlayer();
 
+    }
+    private void FollowPlayer()
+    {
+        distanceFromPlayer = Vector3.Distance(navMeshAgent.transform.position, player.position);
 
-        //navMeshAgent.SetDestination(target.position + off);
-
-        float distanceFromPlayer = Vector3.Distance(navMeshAgent.transform.position, target.position);
-        if (distanceFromPlayer <= navMeshAgent.stoppingDistance)
+        if (distanceFromPlayer > offsetDistance)
         {
-            navMeshAgent.isStopped = true;
-            Debug.Log("reached the player");
-            
+            navMeshAgent.SetDestination(player.position + offset);
+        }
+    }
+    private void InteracteWithPlayer()
+    {
+        if (distanceFromPlayer <= interactDistance)
+        {
+            roboRaoCanvas.SetActive(true);
         }
         else
         {
-            navMeshAgent.isStopped = false;
-
-            
-            Debug.Log("Not reached the player");
-
-
-            navMeshAgent.SetDestination(target.position + off);
-
+            roboRaoCanvas.SetActive(false);
         }
     }
 
-    void Move()
-    {
-        float x = 1f;
-        float y = navMeshAgent.transform.position.y;
-        float z = 1f;
-        Vector3 offset = new Vector3(x, y, z);
-        navMeshAgent.transform.position = target.position + offset;
-    }
     
-
-
 }

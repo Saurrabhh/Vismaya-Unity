@@ -2085,10 +2085,27 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7725418988530962925, guid: 6434170e50bf7a648921922c3a4b4d6a, type: 3}
+      propertyPath: offset
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7725418988530962925, guid: 6434170e50bf7a648921922c3a4b4d6a, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 508021198}
+    - target: {fileID: 7725418988530962925, guid: 6434170e50bf7a648921922c3a4b4d6a, type: 3}
       propertyPath: target
       value: 
       objectReference: {fileID: 508021198}
-    m_RemovedComponents: []
+    - target: {fileID: 7725418988530962925, guid: 6434170e50bf7a648921922c3a4b4d6a, type: 3}
+      propertyPath: roboRaoCanvas
+      value: 
+      objectReference: {fileID: 1209169122}
+    - target: {fileID: 7725418988530962925, guid: 6434170e50bf7a648921922c3a4b4d6a, type: 3}
+      propertyPath: roboRaocanvas
+      value: 
+      objectReference: {fileID: 1209169122}
+    m_RemovedComponents:
+    - {fileID: 4709266872836733960, guid: 6434170e50bf7a648921922c3a4b4d6a, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 6434170e50bf7a648921922c3a4b4d6a, type: 3}
 --- !u!1001 &1979352518
 PrefabInstance:
