@@ -855,6 +855,11 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 297660146}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &328114168 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1262129486, guid: 6434170e50bf7a648921922c3a4b4d6a, type: 3}
+  m_PrefabInstance: {fileID: 7725418988846089427}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &366525272
 GameObject:
   m_ObjectHideFlags: 0
@@ -5163,7 +5168,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2610612061858700308, guid: 52672c123c838064891f7bdc0a6c94ea, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3493043994145428356, guid: 52672c123c838064891f7bdc0a6c94ea, type: 3}
       propertyPath: m_RootOrder
@@ -5324,9 +5329,17 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7725418988530962925, guid: 6434170e50bf7a648921922c3a4b4d6a, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 253290317}
+    - target: {fileID: 7725418988530962925, guid: 6434170e50bf7a648921922c3a4b4d6a, type: 3}
       propertyPath: target
       value: 
       objectReference: {fileID: 253290317}
+    - target: {fileID: 7725418988530962925, guid: 6434170e50bf7a648921922c3a4b4d6a, type: 3}
+      propertyPath: roboRaoCanvas
+      value: 
+      objectReference: {fileID: 328114168}
     m_RemovedComponents:
     - {fileID: 4709266872836733960, guid: 6434170e50bf7a648921922c3a4b4d6a, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 6434170e50bf7a648921922c3a4b4d6a, type: 3}
