@@ -7,6 +7,6 @@ public class SceneLoader : MonoBehaviour
 {
     void Update()
     {
-        SceneManager.LoadScene("Sample Scene", LoadSceneMode.Single);
+        SceneManager.LoadScene("Museum Scene", LoadSceneMode.Single);
     }
 }
