@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "471848773573",
+    "firebase_url": "https://vismaya-19082-default-rtdb.firebaseio.com",
+    "project_id": "vismaya-19082",
+    "storage_bucket": "vismaya-19082.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:471848773573:android:baee0408dad78db7d94dac",
+        "android_client_info": {
+          "package_name": "com.DefaultCompany.VismayaUnity"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "471848773573-bmh5euiiufbeb3boqrp1e1q5e282a1mr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCt1HxdiPUPha32zISArmI4fKPtR-QJtaY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "471848773573-bmh5euiiufbeb3boqrp1e1q5e282a1mr.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
