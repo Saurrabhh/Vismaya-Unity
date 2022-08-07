@@ -323,8 +323,7 @@ GameObject:
   - component: {fileID: 7725418988530962921}
   - component: {fileID: 7725418988530962922}
   - component: {fileID: 7725418988530962926}
-  - component: {fileID: 7725418988530962925}
-  - component: {fileID: 4709266872836733960}
+  - component: {fileID: 5452280791314960346}
   m_Layer: 0
   m_Name: RoboRao
   m_TagString: Untagged
@@ -433,7 +432,7 @@ NavMeshAgent:
   m_BaseOffset: 0.5
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!114 &7725418988530962925
+--- !u!114 &5452280791314960346
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -445,17 +444,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db911a997fa526c498b64a6329c5cd63, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 0}
-  offset: 2
---- !u!114 &4709266872836733960
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7725418988530962916}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4f6ba963f995bf14fbba5c2756191b4e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  offsetDistance: 1
+  interactDistance: 0.8
+  offsetAngle: 45
+  roboRaoCanvas: {fileID: 1262129486}
