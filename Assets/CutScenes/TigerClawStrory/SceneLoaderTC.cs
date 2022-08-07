@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class SceneLoader : MonoBehaviour
+public class SceneLoaderTC : MonoBehaviour
 {
+    int levelIndex = 1;
     void Update()
     {
-        SceneManager.LoadScene("Museum Scene", LoadSceneMode.Single);
+        SceneManager.LoadScene(levelIndex, LoadSceneMode.Single);
     }
 }
