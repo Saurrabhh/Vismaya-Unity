@@ -9,8 +9,7 @@ public class RoboRaoAI : MonoBehaviour
     [SerializeField] float offsetDistance = 1;
     [SerializeField] float interactDistance = 0.8f;
     [SerializeField] float offsetAngle = 45;
-    [SerializeField] GameObject roboRaoCanvas;
-
+    
     NavMeshAgent navMeshAgent;
     Vector3 offset;
     float distanceFromPlayer;
@@ -27,7 +26,7 @@ public class RoboRaoAI : MonoBehaviour
     void Update()
     {
         FollowPlayer();
-        InteracteWithPlayer();
+        
 
     }
     private void FollowPlayer()
@@ -39,17 +38,7 @@ public class RoboRaoAI : MonoBehaviour
             navMeshAgent.SetDestination(player.position + offset);
         }
     }
-    private void InteracteWithPlayer()
-    {
-        if (distanceFromPlayer <= interactDistance)
-        {
-            roboRaoCanvas.SetActive(true);
-        }
-        else
-        {
-            roboRaoCanvas.SetActive(false);
-        }
-    }
+   
 
     
 }

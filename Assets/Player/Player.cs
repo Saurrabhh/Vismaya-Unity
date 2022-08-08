@@ -38,9 +38,10 @@ public class Player : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.V))
         {
             Cursor.lockState = CursorLockMode.None;
+            Debug.Log("is");
         }
     }
 }
