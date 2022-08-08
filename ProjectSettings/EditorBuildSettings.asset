@@ -9,7 +9,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Sample Scene.unity
     guid: 98f0a1e94acbf9e458dd35f5ed01f21c
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
+    path: Assets/Scenes/Terrain Scene.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   - enabled: 1
     path: Assets/Scenes/TigerClaw.unity
