@@ -18,7 +18,7 @@ public class Player : MonoBehaviour
 
     private void Awake()
     {
-        LoadPlayer();
+        //LoadPlayer();
     }
 
     public void LoadPlayer()
