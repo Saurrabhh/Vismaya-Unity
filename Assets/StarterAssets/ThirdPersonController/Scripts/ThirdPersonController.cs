@@ -109,7 +109,7 @@ namespace StarterAssets
         private const float _threshold = 0.01f;
 
         private bool _hasAnimator;
-
+        [HideInInspector] public StaminaController _staminaController;
         private bool IsCurrentDeviceMouse
         {
             get
@@ -135,7 +135,7 @@ namespace StarterAssets
         private void Start()
         {
             _cinemachineTargetYaw = CinemachineCameraTarget.transform.rotation.eulerAngles.y;
-            
+            _staminaController = GetComponent<StaminaController>(); 
             _hasAnimator = TryGetComponent(out _animator);
             _controller = GetComponent<CharacterController>();
             _input = GetComponent<StarterAssetsInputs>();
@@ -150,6 +150,11 @@ namespace StarterAssets
             // reset our timeouts on start
             _jumpTimeoutDelta = JumpTimeout;
             _fallTimeoutDelta = FallTimeout;
+        }
+
+        public void SetRunSpeed(float speed)
+        {
+            SprintSpeed = speed;
         }
 
         private void Update()
@@ -189,7 +194,17 @@ namespace StarterAssets
                 _animator.SetBool(_animIDGrounded, Grounded);
             }
         }
+        public void PlayerJump()
+        {
+            // the square root of H * -2 * G = how much velocity needed to reach desired height
+            _verticalVelocity = Mathf.Sqrt(JumpHeight * -2f * Gravity);
 
+            // update animator if using character
+            if (_hasAnimator)
+            {
+                _animator.SetBool(_animIDJump, true);
+            }
+        }
         private void CameraRotation()
         {
             // if there is an input and camera position is not fixed
@@ -302,14 +317,7 @@ namespace StarterAssets
                 // Jump
                 if (_input.jump && _jumpTimeoutDelta <= 0.0f)
                 {
-                    // the square root of H * -2 * G = how much velocity needed to reach desired height
-                    _verticalVelocity = Mathf.Sqrt(JumpHeight * -2f * Gravity);
-
-                    // update animator if using character
-                    if (_hasAnimator)
-                    {
-                        _animator.SetBool(_animIDJump, true);
-                    }
+                    _staminaController.StaminaJump();
                 }
 
                 // jump timeout

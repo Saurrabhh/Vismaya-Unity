@@ -38,7 +38,54 @@ public class StaminaController : MonoBehaviour
             {
                 playerStamina += staminaRegen * Time.deltaTime;
                 //update stamina
+                UpdateStamina(1);
+
+                if(playerStamina >= maxStamina)
+                {
+                    sliderCanvasGroup.alpha = 0;
+                    hasRegenerated = true;
+                }
             }
+        }
+    }
+    public void Sprinting()
+    {
+        if (hasRegenerated)
+        {
+            weAreSprinting = true;
+            playerStamina -= staminaDrain * Time.deltaTime;
+            UpdateStamina(1);
+
+            if (playerStamina <= 0)
+            {
+                hasRegenerated = false;
+                //slow the player
+
+                sliderCanvasGroup.alpha = 0;
+            }
+        }
+    }
+    public void StaminaJump()
+    {
+        if(playerStamina>= (maxStamina* jumpCost / maxStamina))
+        {
+            playerStamina -= jumpCost;
+            //allow the player to jump
+            playerController.PlayerJump();
+            UpdateStamina(1);
+        }
+    }
+
+    void UpdateStamina(int value)
+    {
+        staminaProgressUI.fillAmount = playerStamina / maxStamina;
+        if (value == 0)
+        {
+            sliderCanvasGroup.alpha = 0;
+        }
+        else
+        {
+            sliderCanvasGroup.alpha = 1;
         }
     }
 }
