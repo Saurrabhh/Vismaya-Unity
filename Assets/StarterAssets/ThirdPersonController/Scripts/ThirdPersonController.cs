@@ -226,11 +226,13 @@ namespace StarterAssets
                 _cinemachineTargetYaw, 0.0f);
         }
 
+
+       
         private void Move()
         {
             // set target speed based on move speed, sprint speed and if sprint is pressed
             float targetSpeed = _input.sprint ? SprintSpeed : MoveSpeed;
-
+           
             // a simplistic acceleration and deceleration designed to be easy to remove, replace, or iterate upon
 
             // note: Vector2's == operator uses approximation so is not floating point error prone, and is cheaper than magnitude
@@ -283,6 +285,16 @@ namespace StarterAssets
             Vector3 targetDirection = Quaternion.Euler(0.0f, _targetRotation, 0.0f) * Vector3.forward;
 
             // move the player
+            if(_staminaController.playerStamina <= 0.1*_staminaController.maxStamina && _input.move != Vector2.zero)
+            {
+                _speed = MoveSpeed;
+                
+            }
+            else if(_input.move != Vector2.zero)
+            {
+                _staminaController.Sprinting();
+            }
+            
             _controller.Move(targetDirection.normalized * (_speed * Time.deltaTime) +
                              new Vector3(0.0f, _verticalVelocity, 0.0f) * Time.deltaTime);
 

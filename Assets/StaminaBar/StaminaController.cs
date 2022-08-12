@@ -6,24 +6,22 @@ public class StaminaController : MonoBehaviour
 {
     [Header("Stamina Main Parameters")]
     public float playerStamina = 100.0f;
-    [SerializeField] private float maxStamina = 100.0f;
-    [SerializeField] private float jumpCost = 20;
+    [SerializeField] public float maxStamina = 100.0f;
+    [SerializeField] private float jumpCost = 5;
+    [SerializeField] public float runCost = 10;
     [HideInInspector] public bool hasRegenerated = true;
     [HideInInspector] public bool weAreSprinting = false;
 
     [Header("Stamina Regen Parameters")]
     [Range(0, 50)][SerializeField] private float staminaDrain = 0.5f;
-    [Range(0, 50)][SerializeField] private float staminaRegen = 0.5f;
-
-    [Header("Stamina Speed Parameters")]
-    [SerializeField] private int slowedRunSpeed = 2;
-    [SerializeField] private int normalRunSpeed = 7;
+    [Range(0, 50)][SerializeField] private float staminaRegen = 0.75f;
 
     [Header("Stamina UI Elements")]
     [SerializeField] private Image staminaProgressUI = null;
     [SerializeField] private CanvasGroup sliderCanvasGroup = null;
 
     private StarterAssets.ThirdPersonController playerController;
+    private StarterAssets.StarterAssetsInputs assetsInputs;
 
     private void Start()
     {
@@ -32,15 +30,21 @@ public class StaminaController : MonoBehaviour
 
     private void Update()
     {
+        StaminaRegen();
+        
+    }
+
+    public void StaminaRegen()
+    {
         if (!weAreSprinting)
         {
-            if(playerStamina <= maxStamina - 0.01)
+            if (playerStamina <= maxStamina - 0.01)
             {
                 playerStamina += staminaRegen * Time.deltaTime;
                 //update stamina
                 UpdateStamina(1);
 
-                if(playerStamina >= maxStamina)
+                if (playerStamina >= maxStamina)
                 {
                     sliderCanvasGroup.alpha = 0;
                     hasRegenerated = true;
@@ -50,20 +54,24 @@ public class StaminaController : MonoBehaviour
     }
     public void Sprinting()
     {
-        if (hasRegenerated)
-        {
-            weAreSprinting = true;
-            playerStamina -= staminaDrain * Time.deltaTime;
-            UpdateStamina(1);
-
-            if (playerStamina <= 0)
+       
+            if (hasRegenerated)
             {
-                hasRegenerated = false;
-                //slow the player
-
-                sliderCanvasGroup.alpha = 0;
+                weAreSprinting = false;
+                playerStamina -= staminaDrain * Time.deltaTime;
+                UpdateStamina(1);
+                
+                if (playerStamina <= 0)
+                {
+                    hasRegenerated = false;
+                    //slow the player
+                    
+                    sliderCanvasGroup.alpha = 0;
+                }
             }
-        }
+
+        
+        
     }
     public void StaminaJump()
     {
