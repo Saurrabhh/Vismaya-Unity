@@ -5,9 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class SceneLoaderSR : MonoBehaviour
 {
-    int levelindex = 3;
+    int levelindex = 2;
     void Update()
     {
-        SceneManager.LoadScene("Museum Scene", LoadSceneMode.Single);
+        SceneManager.LoadScene(levelindex, LoadSceneMode.Single);
     }
 }
