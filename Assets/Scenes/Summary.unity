@@ -143,6 +143,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 11415212, guid: 797e1707df74d9b4d8c9510b09e50214, type: 3}
+      propertyPath: bookPages.Array.size
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 11415212, guid: 797e1707df74d9b4d8c9510b09e50214, type: 3}
       propertyPath: bookPages.Array.data[0]
       value: 
       objectReference: {fileID: 21300000, guid: d39b502a290d76540a9a661ca7924c7b, type: 3}
@@ -170,6 +174,14 @@ PrefabInstance:
       propertyPath: bookPages.Array.data[6]
       value: 
       objectReference: {fileID: 21300000, guid: 7b5b9d5434018754bae66eda85a48289, type: 3}
+    - target: {fileID: 11415212, guid: 797e1707df74d9b4d8c9510b09e50214, type: 3}
+      propertyPath: bookPages.Array.data[7]
+      value: 
+      objectReference: {fileID: 21300000, guid: 8c929cedb38a76148af4387bac5be4fd, type: 3}
+    - target: {fileID: 11415212, guid: 797e1707df74d9b4d8c9510b09e50214, type: 3}
+      propertyPath: bookPages.Array.data[8]
+      value: 
+      objectReference: {fileID: 21300000, guid: 8572dc71c04e100418668d577a5be1cb, type: 3}
     - target: {fileID: 11430880, guid: 797e1707df74d9b4d8c9510b09e50214, type: 3}
       propertyPath: m_Sprite
       value: 
