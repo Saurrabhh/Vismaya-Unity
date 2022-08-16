@@ -6,7 +6,7 @@ using TMPro;
 public class DialogueManager : MonoBehaviour
 {
     
-    public RawImage avatarImage;
+    public Image avatarImage;
     public TextMeshProUGUI avatarName;
     public TextMeshProUGUI dialogueText;
     public RectTransform background;
@@ -33,7 +33,7 @@ public class DialogueManager : MonoBehaviour
         
         Avatar avatarToDisplay = currentAvatars[dialogueToDisplay.AvatarId];
         avatarName.text = avatarToDisplay.name;
-        //avatarImage.sprite = avatarToDisplay.sprite;
+        avatarImage.sprite = avatarToDisplay.sprite;
 
         AnimateText();
     }

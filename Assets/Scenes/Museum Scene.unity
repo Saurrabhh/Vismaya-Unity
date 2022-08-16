@@ -134,6 +134,18 @@ PrefabInstance:
       propertyPath: manager
       value: 
       objectReference: {fileID: 944271983}
+    - target: {fileID: 6739809323651436686, guid: b973dbffe0a9ad14dbb46748c600c033, type: 3}
+      propertyPath: images.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6739809323651436686, guid: b973dbffe0a9ad14dbb46748c600c033, type: 3}
+      propertyPath: avatars.Array.data[0].sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 2aa967b18a74a8d47b4983aa4d9ace33, type: 3}
+    - target: {fileID: 6739809323651436686, guid: b973dbffe0a9ad14dbb46748c600c033, type: 3}
+      propertyPath: avatars.Array.data[1].sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 19364b1b3ee6e5d48ba112c6784b1b7c, type: 3}
     - target: {fileID: 6739809323651436687, guid: b973dbffe0a9ad14dbb46748c600c033, type: 3}
       propertyPath: m_RootOrder
       value: 9
@@ -206,12 +218,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e0f17365e5c2f64e978b09383794bbe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  name: 
-  uid: 
-  email: 
-  age: 0
-  gender: 
-  currentSceneIndex: 0
 --- !u!1 &326625323
 GameObject:
   m_ObjectHideFlags: 0
