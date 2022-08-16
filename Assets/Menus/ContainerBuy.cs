@@ -9,9 +9,9 @@ public class ContainerBuy : MonoBehaviour
 
     public void On_Click_Buy()
     {
-        if(PlayerData.money >= itemCost)
+        if(Player.money >= itemCost)
         {
-            PlayerData.money -= itemCost;
+            Player.money -= itemCost;
             Destroy(gameObject);
         }
         else

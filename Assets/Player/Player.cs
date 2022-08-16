@@ -4,16 +4,18 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    public string name;
-    public string uid;
-    public string email;
-    public int age;
-    public string gender;
-    public int currentSceneIndex;
+    public static string pName;
+    public static string uid;
+    public static string email;
+    public static int age;
+    public static string gender;
+    public static int currentSceneIndex;
     public static int money;
+    public static int[] tools;
 
     public void SavePlayer()
     {
+        //add scene index
         SavePlayerData.SavePlayer(this);
     }
 
@@ -25,12 +27,13 @@ public class Player : MonoBehaviour
     public void LoadPlayer()
     {
         PlayerData playerData = SavePlayerData.LoadPlayer();
-        name = playerData.name;
+        pName = playerData.name;
         age = playerData.age;
         uid = playerData.uid;
         email = playerData.email;
         gender = playerData.gender; 
         currentSceneIndex = playerData.currentSceneIndex;
+        money = playerData.money;
 
         transform.position = playerData.ReturnPosition();
         transform.rotation = playerData.ReturnRotation();
@@ -44,5 +47,10 @@ public class Player : MonoBehaviour
             Cursor.lockState = CursorLockMode.None;
             Debug.Log("is");
         }
+    }
+
+    void UpdateUser()
+    {
+
     }
 }

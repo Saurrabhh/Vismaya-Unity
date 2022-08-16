@@ -13,21 +13,21 @@ public class PlayerData
     public float[] position;
     public float[] rotation;
     public int currentSceneIndex;
-    public static int money=100;
+    public int money;
 
     public PlayerData(Player player)
     {
-        this.name = player.name;
-        this.email = player.email;
-        this.currentSceneIndex = player.currentSceneIndex;
-        this.age = player.age;
-        this.gender = player.gender;
-        this.uid = player.uid;
+        this.name = Player.pName;
+        this.email = Player.email;
+        this.currentSceneIndex = Player.currentSceneIndex;
+        this.age = Player.age;
+        this.gender = Player.gender;
+        this.uid = Player.uid;
         Vector3 pos = player.transform.position;
         Quaternion rot = player.transform.rotation;
         this.position = new float[3] { pos.x, pos.y, pos.z };
         this.rotation = new float[4] { rot.x, rot.y, rot.z, rot.w };
-        PlayerData.money = Player.money;
+        this.money = Player.money;
     }
 
     public Vector3 ReturnPosition()

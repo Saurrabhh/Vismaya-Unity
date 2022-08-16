@@ -4,6 +4,8 @@ using UnityEngine;
 using TMPro;
 using Firebase;
 using Firebase.Auth;
+using Firebase.Database;
+using UnityEngine.SceneManagement;
 
 public class AuthManager : MonoBehaviour
 {
@@ -20,10 +22,13 @@ public class AuthManager : MonoBehaviour
 
     public FirebaseAuth auth;
     public FirebaseUser user;
+    public DatabaseReference database;
     private void Start()
     {
         auth = FirebaseManager.auth;
         user = FirebaseManager.user;
+        database = FirebaseManager.database;
+        
     }
 
 
@@ -34,7 +39,8 @@ public class AuthManager : MonoBehaviour
 
     public void RegisterBtn()
     {
-        StartCoroutine(Register(emailFieldRegister.text, passwordFieldRegister.text));
+        
+        StartCoroutine(Register(emailFieldRegister.text, passwordFieldRegister.text, confirmPasswordFieldRegister.text, nameField.text, int.Parse(ageField.text), genderDropdown.options[genderDropdown.value].text));
     }
 
     public void SignOutBtn()
@@ -95,8 +101,9 @@ public class AuthManager : MonoBehaviour
     }
 
 
-    private IEnumerator Register(string _email, string _password)
+    private IEnumerator Register(string _email, string _password, string _confirmpassword, string _name, int _age, string _gender)
     {
+
 
         //Call the Firebase auth signin function passing the email and password
         var RegisterTask = auth.CreateUserWithEmailAndPasswordAsync(_email, _password);
@@ -154,6 +161,19 @@ public class AuthManager : MonoBehaviour
                 else
                 {
                     Debug.Log("Done eee");
+                    Player.pName = _name;
+                    Player.age = _age;
+                    Player.gender = _gender;
+                    Player.email = _email;
+                    Player.uid = user.UserId;
+                    Player.currentSceneIndex = 1;
+                    Player.money = 100;
+                    Player player = FindObjectOfType<Player>();
+                    PlayerData playerData = new PlayerData(player);
+                    string json = JsonUtility.ToJson(playerData);
+                    database.Child("users").Child(user.UserId).SetRawJsonValueAsync(json);
+                    SceneManager.LoadScene(Player.currentSceneIndex);
+                    
                 }
             }
         }

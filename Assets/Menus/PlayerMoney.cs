@@ -34,6 +34,6 @@ public class PlayerMoney : MonoBehaviour
     
     void Update()
     {
-        m_TextMeshPro.text = PlayerData.money.ToString();
+        m_TextMeshPro.text = Player.money.ToString();
     }
 }
