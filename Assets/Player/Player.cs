@@ -10,6 +10,7 @@ public class Player : MonoBehaviour
     public int age;
     public string gender;
     public int currentSceneIndex;
+    public static int money;
 
     public void SavePlayer()
     {

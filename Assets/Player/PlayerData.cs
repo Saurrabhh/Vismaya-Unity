@@ -13,6 +13,7 @@ public class PlayerData
     public float[] position;
     public float[] rotation;
     public int currentSceneIndex;
+    public static int money=100;
 
     public PlayerData(Player player)
     {
@@ -26,6 +27,7 @@ public class PlayerData
         Quaternion rot = player.transform.rotation;
         this.position = new float[3] { pos.x, pos.y, pos.z };
         this.rotation = new float[4] { rot.x, rot.y, rot.z, rot.w };
+        PlayerData.money = Player.money;
     }
 
     public Vector3 ReturnPosition()
