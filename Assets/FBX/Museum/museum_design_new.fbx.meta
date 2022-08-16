@@ -3,7 +3,152 @@ guid: 4ed771f41f7100b4d8d75053fae5cb6c
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Balaji bajirao
+    second: {fileID: 2100000, guid: 258b4dc6160e46e4e9e364ac1dc1fdd8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Book0_material
+    second: {fileID: 2100000, guid: 82dabe534e35cae42a6a2e90c5869bf4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Book0_material.001
+    second: {fileID: 2100000, guid: 5c05e3f8db2e8c24e8cd52fd7f43ecee, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Book0_side_material
+    second: {fileID: 2100000, guid: a9ff3b999d626de468d626fec41fe0a8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Book0_side_material.001
+    second: {fileID: 2100000, guid: 92a596b4fa8905a44bfec3ebe5359796, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Door_material
+    second: {fileID: 2100000, guid: 01082f36437ceb340b643d3738f4c3d3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Handle_material
+    second: {fileID: 2100000, guid: c7b76a3825a7aab44a8f1ba3227dae8b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Pratapsingh
+    second: {fileID: 2100000, guid: be68b79b3fbd2a847b1ae00d18843daa, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Rajaram 2
+    second: {fileID: 2100000, guid: 80350d8434bcd7c4b995593d2d08a6ea, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Rajaram 3
+    second: {fileID: 2100000, guid: 69fe9acfd37dd864e86327abdbbd9624, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Shahaji
+    second: {fileID: 2100000, guid: 594a098fe7e123042b9a36a704eaa82b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Shahu 1
+    second: {fileID: 2100000, guid: 82be6dad4fd7c874ba8233fdcab73cd5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Shahu 4
+    second: {fileID: 2100000, guid: 89b189ac38a7e4845a318e41858ed55a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Shelves_material
+    second: {fileID: 2100000, guid: 56ab210739010dd4f90de39c2b3c0f7a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Slab_bottom
+    second: {fileID: 2100000, guid: 9f750f867de912f449e286df5d705489, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Slab_side
+    second: {fileID: 2100000, guid: 4bda0a98db3539c4f872bf264413c7b2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Slab_top
+    second: {fileID: 2100000, guid: 4308cf91d3761684cab377559d73e957, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Stair_glass
+    second: {fileID: 2100000, guid: 05320f49c44a9c54b90507984b153c63, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Stair_metal
+    second: {fileID: 2100000, guid: 1d2d596209780c64faf1b57308812e00, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Stair_white
+    second: {fileID: 2100000, guid: 6a3fa89e66c23af41927f48f41e53125, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Stair_wood
+    second: {fileID: 2100000, guid: 286a928dc7e954c44818ab6bfc1f242c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Wall2_alt1
+    second: {fileID: 2100000, guid: 1bdafaa5e11a9da48a5acead6d60fca3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Wall2_cuts
+    second: {fileID: 2100000, guid: e0828c96aaf483a42b0212675ecd80ff, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Wall2_outside
+    second: {fileID: 2100000, guid: 14806f15311336c4b8b8fa7c5c187075, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: shahaji 2
+    second: {fileID: 2100000, guid: 1ce2ba50ba26aa94bbd5685b067379da, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: shivaji 1
+    second: {fileID: 2100000, guid: 62d1d60f1aeeff44a800d12a63667ea6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: shivaji 5
+    second: {fileID: 2100000, guid: 88d73d33777390c41b6b1744b6c2598d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: shivaji 6
+    second: {fileID: 2100000, guid: d0eb33657ff759f4b9c130f9ad286045, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: shivaji 7
+    second: {fileID: 2100000, guid: 630c8568e3e1b544a82b4fe0617d2f29, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
