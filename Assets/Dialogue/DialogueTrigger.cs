@@ -12,6 +12,10 @@ public class DialogueTrigger : MonoBehaviour
         manager.OpenDialogue(dialogues, avatars);
        
     }
+    private void OnTriggerEnter(Collider other)
+    {
+        StartDialogue();
+    }
 }
 [System.Serializable]
 public class Dialogue
