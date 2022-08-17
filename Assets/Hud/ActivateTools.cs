@@ -13,7 +13,7 @@ public class ActivateTools : MonoBehaviour
         }
         else
         {
-            ToolsMenu.SetActive(true);  
+            ToolsMenu.SetActive(true);
         }
     }
 }
