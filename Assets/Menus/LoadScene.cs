@@ -7,7 +7,8 @@ public class LoadScene : MonoBehaviour
 {
     public void LoadingScene()
     {
-        int scene = 5;
-        SceneManager.LoadScene(scene);
+        int menuScene = 5;
+        SceneManager.LoadScene(menuScene);
+        
     }
 }

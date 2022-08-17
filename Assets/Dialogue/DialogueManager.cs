@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 using TMPro;
 public class DialogueManager : MonoBehaviour
 {
@@ -10,7 +11,7 @@ public class DialogueManager : MonoBehaviour
     public TextMeshProUGUI avatarName;
     public TextMeshProUGUI dialogueText;
     public RectTransform background;
-
+    Collision collision;
     Dialogue[] currentDialogues;  //to store the details of current active sessions
     Avatar[] currentAvatars;
     int activeDialogue = 0;
@@ -70,5 +71,10 @@ public class DialogueManager : MonoBehaviour
         {
             Nextmessage();
         }
+        if (Input.GetKeyDown(KeyCode.F) && isActive == true)
+        {
+            SceneManager.LoadScene("StoryofRulers");
+        }
+        
     }
 }
