@@ -25,13 +25,7 @@ public class PlayerMoney : MonoBehaviour
             Debug.Log("Limit Reached");
         }
     }
-    */
-    void Start()
-    {
-        
-    }
-
-    
+    */ 
     void Update()
     {
         m_TextMeshPro.text = Player.money.ToString();

@@ -10,8 +10,9 @@ public class Player : MonoBehaviour
     public static int age;
     public static string gender;
     public static int currentSceneIndex;
-    public static int money;
-    public static int[] tools;
+    public static int money = 100;
+    public static List<Tool> totalTools = new List<Tool>();
+    public static List<Tool> activeTools = new List<Tool>();
 
     public void SavePlayer()
     {

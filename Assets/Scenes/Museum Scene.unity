@@ -130,6 +130,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6485787797733726204, guid: b973dbffe0a9ad14dbb46748c600c033, type: 3}
+      propertyPath: m_LocalScale.x
+      value: -0.09
+      objectReference: {fileID: 0}
+    - target: {fileID: 6485787797733726204, guid: b973dbffe0a9ad14dbb46748c600c033, type: 3}
+      propertyPath: m_LocalScale.y
+      value: -0.027169723
+      objectReference: {fileID: 0}
+    - target: {fileID: 6485787797733726204, guid: b973dbffe0a9ad14dbb46748c600c033, type: 3}
+      propertyPath: m_LocalScale.z
+      value: -0.07555079
+      objectReference: {fileID: 0}
+    - target: {fileID: 6485787797733726204, guid: b973dbffe0a9ad14dbb46748c600c033, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6739809323651436686, guid: b973dbffe0a9ad14dbb46748c600c033, type: 3}
       propertyPath: manager
       value: 
@@ -322,6 +338,10 @@ PrefabInstance:
     - target: {fileID: 4034552337782730258, guid: 4f71ca9ced5250a46aebd922673b7c79, type: 3}
       propertyPath: m_Name
       value: Dialogue Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 4034552337782730258, guid: 4f71ca9ced5250a46aebd922673b7c79, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4034552337782730351, guid: 4f71ca9ced5250a46aebd922673b7c79, type: 3}
       propertyPath: m_Pivot.x
@@ -788,6 +808,10 @@ PrefabInstance:
     - target: {fileID: 7386425241837575451, guid: 4b4385eec3fc5534289a09a4788a5c10, type: 3}
       propertyPath: m_RootOrder
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7386425241837575455, guid: 4b4385eec3fc5534289a09a4788a5c10, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4b4385eec3fc5534289a09a4788a5c10, type: 3}
@@ -1281,6 +1305,10 @@ PrefabInstance:
     - target: {fileID: 5445943324714595962, guid: 13ce5ce1feb217f4382d7e7d7684183e, type: 3}
       propertyPath: m_Name
       value: Main Camera
+      objectReference: {fileID: 0}
+    - target: {fileID: 5445943324714595962, guid: 13ce5ce1feb217f4382d7e7d7684183e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 13ce5ce1feb217f4382d7e7d7684183e, type: 3}
@@ -2487,7 +2515,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5402087803550670408, guid: 009a2af69c18e9a4d9cf885064ae7e3e, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 009a2af69c18e9a4d9cf885064ae7e3e, type: 3}
@@ -3289,7 +3317,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &7272638918317557327
 Transform:
   m_ObjectHideFlags: 0

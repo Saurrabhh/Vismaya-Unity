@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class ContainerBuy : MonoBehaviour
 {
-    [SerializeField] int itemCost;
-    
-
+  
     public void On_Click_Buy()
     {
+        Tool tool1 = GetComponent<Tool>();
+        int itemCost = tool1.cost;
+        Debug.Log(itemCost);
         if(Player.money >= itemCost)
         {
             Player.money -= itemCost;

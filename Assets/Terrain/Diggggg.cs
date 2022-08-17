@@ -9,6 +9,7 @@ public class Diggggg : MonoBehaviour
     [Header("Async parameters")]
     [Tooltip("Enable to edit the terrain asynchronously and avoid impacting the frame rate too much.")]
     public bool editAsynchronously = true;
+    [SerializeField] Camera camera;
 
     [Header("Modification parameters")]
     public BrushType brush = BrushType.Sphere;
@@ -41,7 +42,7 @@ public class Diggggg : MonoBehaviour
         {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             // Perform a raycast to find terrain surface and call Modify method of DiggerMasterRuntime to edit it
-            if (Physics.Raycast(transform.position, transform.forward, out var hit, 2000f))
+            if (Physics.Raycast(camera.transform.position, camera.transform.forward, out var hit, 2000f))
             {
                 if (editAsynchronously)
                 {
