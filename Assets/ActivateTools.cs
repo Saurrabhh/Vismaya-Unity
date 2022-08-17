@@ -4,16 +4,16 @@ using UnityEngine;
 
 public class ActivateTools : MonoBehaviour
 {
-    public GameObject Tools;
+    public GameObject ToolsMenu;
     public void WhenButtonClicked()
     {
-        if(Tools.activeInHierarchy == true)
+        if(ToolsMenu.activeInHierarchy == true)
         {
-            Tools.SetActive(false); 
+            ToolsMenu.SetActive(false); 
         }
         else
         {
-            Tools.SetActive(true);  
+            ToolsMenu.SetActive(true);  
         }
     }
 }
