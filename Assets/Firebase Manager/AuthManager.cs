@@ -28,7 +28,10 @@ public class AuthManager : MonoBehaviour
         auth = FirebaseManager.auth;
         user = FirebaseManager.user;
         database = FirebaseManager.database;
-        
+        if(auth.CurrentUser != null)
+        {
+            SceneManager.LoadScene((int)Scenes.Museum);
+        }
     }
 
 
@@ -48,7 +51,6 @@ public class AuthManager : MonoBehaviour
         auth.SignOut();
         auth.StateChanged += FirebaseManager.AuthStateChanged;
         FirebaseManager.AuthStateChanged(this, null);
-
     }
 
 
@@ -94,8 +96,7 @@ public class AuthManager : MonoBehaviour
             //Now get the result
             user = LoginTask.Result;
             Debug.LogFormat("User signed in successfully: {0} ({1})", user.DisplayName, user.Email);
-
-
+            SceneManager.LoadScene((int)Scenes.Museum);
         }
 
     }
@@ -103,7 +104,6 @@ public class AuthManager : MonoBehaviour
 
     private IEnumerator Register(string _email, string _password, string _confirmpassword, string _name, int _age, string _gender)
     {
-
 
         //Call the Firebase auth signin function passing the email and password
         var RegisterTask = auth.CreateUserWithEmailAndPasswordAsync(_email, _password);
@@ -166,7 +166,7 @@ public class AuthManager : MonoBehaviour
                     Player.gender = _gender;
                     Player.email = _email;
                     Player.uid = user.UserId;
-                    Player.currentSceneIndex = 1;
+                    Player.currentSceneIndex = (int)Scenes.Museum;
                     Player.money = 100;
                     Player player = FindObjectOfType<Player>();
                     PlayerData playerData = new PlayerData(player);

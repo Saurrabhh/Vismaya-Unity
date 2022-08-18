@@ -6,6 +6,7 @@ using Firebase.Auth;
 using Firebase.Database;
 using Firebase.Storage;
 using System;
+using UnityEngine.SceneManagement;
 
 public class FirebaseManager : MonoBehaviour
 {
@@ -55,6 +56,7 @@ public class FirebaseManager : MonoBehaviour
             if (!signedIn && user != null)
             {
                 Debug.Log("Signed out " + user.UserId);
+                SceneManager.LoadScene((int)Scenes.Auth);
             }
             user = auth.CurrentUser;
             if (signedIn)
