@@ -12,25 +12,22 @@ public static class SavePlayerData
 {
     public static void SavePlayer(Player player)
     {
-        string path = Application.persistentDataPath + "/PlayerData.vismaya";
+        PlayerData playerData = new PlayerData(player);
+        string path = Application.persistentDataPath + $"/{playerData.uid}.vismaya";
+        Debug.Log(path);
         FileStream fs = File.Create(path);
         BinaryFormatter formatter = new BinaryFormatter();
-
-        PlayerData playerData = new PlayerData(player);
 
         formatter.Serialize(fs, playerData);
         fs.Close();
         string json = JsonUtility.ToJson(playerData);
-        Debug.Log(json);
 
 
-        FirebaseStorage storage = FirebaseStorage.DefaultInstance;
-        DatabaseReference reference = FirebaseDatabase.DefaultInstance.RootReference;
-        reference.Child("users").Child("nfvaehubyfbcua").SetRawJsonValueAsync(json);
-        // Create a root reference
-        StorageReference storageRef = storage.RootReference;
-        // Create a reference to the file you want to upload
-        StorageReference riversRef = storageRef.Child("playerdata.vsmy");
+        StorageReference storage = FirebaseManager.storage;
+        DatabaseReference database = FirebaseManager.database;
+        
+        StorageReference riversRef = storage.Child($"{playerData.uid}.vismaya");
+        database.Child("Users").Child(playerData.uid).SetRawJsonValueAsync(json);
 
         // Upload the file to the path "images/rivers.jpg"
         riversRef.PutFileAsync(path)
@@ -53,7 +50,7 @@ public static class SavePlayerData
 
     public static PlayerData LoadPlayer()
     {
-        string path = Application.persistentDataPath + "/PlayerData.vismaya";
+        string path = Application.persistentDataPath + $"/{Player.uid}.vismaya";
         if (File.Exists(path))
         {
             BinaryFormatter formatter = new BinaryFormatter();

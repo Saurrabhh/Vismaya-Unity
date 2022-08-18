@@ -41,8 +41,7 @@ public class AuthManager : MonoBehaviour
     }
 
     public void RegisterBtn()
-    {
-        
+    {    
         StartCoroutine(Register(emailFieldRegister.text, passwordFieldRegister.text, confirmPasswordFieldRegister.text, nameField.text, int.Parse(ageField.text), genderDropdown.options[genderDropdown.value].text));
     }
 
@@ -169,9 +168,10 @@ public class AuthManager : MonoBehaviour
                     Player.currentSceneIndex = (int)Scenes.Museum;
                     Player.money = 100;
                     Player player = FindObjectOfType<Player>();
-                    PlayerData playerData = new PlayerData(player);
-                    string json = JsonUtility.ToJson(playerData);
-                    database.Child("users").Child(user.UserId).SetRawJsonValueAsync(json);
+                    //PlayerData playerData = new PlayerData(player);
+                    //string json = JsonUtility.ToJson(playerData);
+                    //database.Child("users").Child(user.UserId).SetRawJsonValueAsync(json);
+                    SavePlayerData.SavePlayer(player);
                     SceneManager.LoadScene(Player.currentSceneIndex);
                     
                 }
