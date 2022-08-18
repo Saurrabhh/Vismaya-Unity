@@ -3,17 +3,7 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags:
-  - CinemachineTarget
-  - Main Menu
-  - Settings Menu
-<<<<<<< Updated upstream
-  - Owned
-||||||| constructed merge base
-=======
-  - collider
-  - bookCollider
->>>>>>> Stashed changes
+  tags: []
   layers:
   - Default
   - TransparentFX
