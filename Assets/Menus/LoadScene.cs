@@ -11,4 +11,10 @@ public class LoadScene : MonoBehaviour
         SceneManager.LoadScene(menuScene);
         
     }
+
+    public void OpenSettings(Canvas settings)
+    {
+        Debug.Log(gameObject.name);
+        settings.gameObject.SetActive(true);
+    }
 }
