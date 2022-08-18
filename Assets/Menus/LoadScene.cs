@@ -14,7 +14,16 @@ public class LoadScene : MonoBehaviour
 
     public void OpenSettings(Canvas settings)
     {
-        Debug.Log(gameObject.name);
+        GameObject hud = GameObject.FindGameObjectWithTag("HUD");
         settings.gameObject.SetActive(true);
+        hud.gameObject.SetActive(false);
+        
+    }
+    public void OpenHUD(Canvas hud)
+    {
+        GameObject settings = GameObject.FindGameObjectWithTag("Settings");
+        hud.gameObject.SetActive(true);
+        settings.gameObject.SetActive(false);
+        
     }
 }
