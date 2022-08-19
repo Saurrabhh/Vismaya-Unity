@@ -134,6 +134,7 @@ GameObject:
   - component: {fileID: 185116581}
   - component: {fileID: 185116580}
   - component: {fileID: 185116579}
+  - component: {fileID: 185116582}
   m_Layer: 0
   m_Name: Book Collider
   m_TagString: bookCollider
@@ -187,15 +188,28 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 185116578}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -73.656, y: 21.033531, z: -126.046555}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -73.65, y: 21.033531, z: -126.046555}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8997317931195736082}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &185116582
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 185116578}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b99490c4651e41c4fb065fc4d9c7c7e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DialogueCanvas: {fileID: 1564540663}
 --- !u!1 &187197350
 GameObject:
   m_ObjectHideFlags: 0
@@ -523,41 +537,13 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 6485787797733726204, guid: b973dbffe0a9ad14dbb46748c600c033, type: 3}
-      propertyPath: m_LocalScale.x
-      value: -0.09
-      objectReference: {fileID: 0}
-    - target: {fileID: 6485787797733726204, guid: b973dbffe0a9ad14dbb46748c600c033, type: 3}
-      propertyPath: m_LocalScale.y
-      value: -0.027169723
-      objectReference: {fileID: 0}
-    - target: {fileID: 6485787797733726204, guid: b973dbffe0a9ad14dbb46748c600c033, type: 3}
-      propertyPath: m_LocalScale.z
-      value: -0.07555079
-      objectReference: {fileID: 0}
-    - target: {fileID: 6485787797733726204, guid: b973dbffe0a9ad14dbb46748c600c033, type: 3}
-      propertyPath: m_ConstrainProportionsScale
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 6739809323651436686, guid: b973dbffe0a9ad14dbb46748c600c033, type: 3}
       propertyPath: manager
       value: 
       objectReference: {fileID: 944271983}
-    - target: {fileID: 6739809323651436686, guid: b973dbffe0a9ad14dbb46748c600c033, type: 3}
-      propertyPath: images.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6739809323651436686, guid: b973dbffe0a9ad14dbb46748c600c033, type: 3}
-      propertyPath: avatars.Array.data[0].sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 2aa967b18a74a8d47b4983aa4d9ace33, type: 3}
-    - target: {fileID: 6739809323651436686, guid: b973dbffe0a9ad14dbb46748c600c033, type: 3}
-      propertyPath: avatars.Array.data[1].sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 19364b1b3ee6e5d48ba112c6784b1b7c, type: 3}
     - target: {fileID: 6739809323651436687, guid: b973dbffe0a9ad14dbb46748c600c033, type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 6739809323651436687, guid: b973dbffe0a9ad14dbb46748c600c033, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1480,7 +1466,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4034552337782730259, guid: 4f71ca9ced5250a46aebd922673b7c79, type: 3}
   m_PrefabInstance: {fileID: 423290948}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1564540663}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a026c9c9bb9d39a4b956750b355e3719, type: 3}
@@ -3155,6 +3141,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1501469703}
   m_CullTransparentMesh: 1
+--- !u!1 &1564540663 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4034552337782730258, guid: 4f71ca9ced5250a46aebd922673b7c79, type: 3}
+  m_PrefabInstance: {fileID: 423290948}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1591888663
 GameObject:
   m_ObjectHideFlags: 0

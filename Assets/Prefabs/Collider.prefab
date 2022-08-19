@@ -68,7 +68,9 @@ MonoBehaviour:
     dialogue: Cool! Press F to see the surprise
   avatars:
   - name: RoboRao
+    sprite: {fileID: 21300000, guid: 2aa967b18a74a8d47b4983aa4d9ace33, type: 3}
   - name: Player
+    sprite: {fileID: 21300000, guid: 19364b1b3ee6e5d48ba112c6784b1b7c, type: 3}
   manager: {fileID: 0}
 --- !u!1001 &6739809323729694743
 PrefabInstance:
@@ -83,15 +85,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 7108aed1f9688bb449f3a9cb1ad713ab, type: 3}
       propertyPath: m_LocalScale.x
-      value: -0.06085182
+      value: -0.09
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 7108aed1f9688bb449f3a9cb1ad713ab, type: 3}
       propertyPath: m_LocalScale.y
-      value: -0.0183703
+      value: -0.027169723
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 7108aed1f9688bb449f3a9cb1ad713ab, type: 3}
       propertyPath: m_LocalScale.z
-      value: -0.05108225
+      value: -0.07555079
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 7108aed1f9688bb449f3a9cb1ad713ab, type: 3}
       propertyPath: m_LocalPosition.x
@@ -132,6 +134,10 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 7108aed1f9688bb449f3a9cb1ad713ab, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 7108aed1f9688bb449f3a9cb1ad713ab, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 7108aed1f9688bb449f3a9cb1ad713ab, type: 3}
       propertyPath: m_Name
