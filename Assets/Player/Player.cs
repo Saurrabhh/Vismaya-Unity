@@ -13,6 +13,9 @@ public class Player : MonoBehaviour
     public static int money = 100;
     public static List<Tool> totalTools = new List<Tool>();
     public static List<Tool> activeTools = new List<Tool>();
+    public static List<Artifact> artifactsList = new List<Artifact> ();
+    public static bool hasDugged = false;
+    
 
     public void SavePlayer()
     {
@@ -48,6 +51,10 @@ public class Player : MonoBehaviour
             Cursor.lockState = CursorLockMode.None;
             Debug.Log("is");
         }
+        
+
     }
+
+    
 
 }
