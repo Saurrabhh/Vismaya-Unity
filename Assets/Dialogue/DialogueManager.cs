@@ -71,9 +71,9 @@ public class DialogueManager : MonoBehaviour
         {
             Nextmessage();
         }
-        if (Input.GetKeyDown(KeyCode.F) && isActive == true)
+        if (Input.GetKeyDown(KeyCode.N) && isActive == true)
         {
-            SceneManager.LoadScene("StoryofRulers");
+            SceneManager.LoadScene((int)Scenes.StoryofRulers);
         }
         
     }

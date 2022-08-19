@@ -5,13 +5,21 @@ using UnityEngine.SceneManagement;
 
 public class LoadBackStory : MonoBehaviour
 {
-    public GameObject DialogueCanvas;
+    public GameObject canvas;
     private void OnTriggerStay(Collider other)
     {
         if (Input.GetKeyDown(KeyCode.F))
-        {
-            DialogueCanvas.SetActive(true); 
+        { 
+            Debug.Log("Lalala");
             SceneManager.LoadScene((int)Scenes.Summary);
         }
+    }
+    private void OnTriggerExit(Collider other)
+    {
+        canvas.SetActive(false);
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        canvas.SetActive(true);
     }
 }

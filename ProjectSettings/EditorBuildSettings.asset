@@ -20,5 +20,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/CutScenes/TigerClaw.unity
     guid: 95d7c47faa2aa0943b7faf252c78dede
+  - enabled: 1
+    path: Assets/Scenes/Summary.unity
+    guid: 657fbf5ad3e3fa4459cc59f9ed51844f
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 9e7be553448fa2546aea5752021cbcf7, type: 2}
