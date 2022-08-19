@@ -6,6 +6,9 @@ public enum Scenes
 {
     Auth,
     Museum,
-    Terrain
+    Terrain,
+    StoryofRulers,
+    TigerClaw,
+    Summary
 
 }
