@@ -8,14 +8,31 @@ public class DialogueTrigger : MonoBehaviour
     public Avatar[] avatars;
     
     [SerializeField] DialogueManager manager;
+    public GameObject canvas;
     public void StartDialogue()  
     {
+        manager.gameObject.SetActive(true);
         manager.OpenDialogue(dialogues, avatars);
        
     }
+    private void OnTriggerStay(Collider other)
+    {
+        if (Input.GetKeyDown(KeyCode.F))
+        {
+            Debug.Log("ggg");
+            StartDialogue();
+        }
+            
+    }
+
     private void OnTriggerEnter(Collider other)
     {
-        StartDialogue();
+        canvas.SetActive(true);
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        canvas.SetActive(false);
     }
 }
 [System.Serializable]
