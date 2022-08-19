@@ -15,8 +15,8 @@ public class Player : MonoBehaviour
     public static List<Tool> activeTools = new List<Tool>();
     public static List<Artifact> artifactsList = new List<Artifact> ();
     public static bool hasDugged = false;
-    
 
+    
     public void SavePlayer()
     {
         //add scene index
@@ -51,10 +51,21 @@ public class Player : MonoBehaviour
             Cursor.lockState = CursorLockMode.None;
             Debug.Log("is");
         }
-        
-
+        if (hasDugged)
+        {
+            ArtifactInstantiate(artifactsList[0].m_gameObject);
+            hasDugged = false;
+        }
+         
     }
 
-    
+    public void ArtifactInstantiate(GameObject prefab)
+    {
+        Instantiate(prefab, new Vector3(4, 1, 5), Quaternion.identity).gameObject.SetActive(true);
+    }
+
 
 }
+
+
+
