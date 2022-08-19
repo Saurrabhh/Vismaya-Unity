@@ -338,6 +338,18 @@ PrefabInstance:
       propertyPath: manager
       value: 
       objectReference: {fileID: 944271983}
+    - target: {fileID: 6739809323651436686, guid: b973dbffe0a9ad14dbb46748c600c033, type: 3}
+      propertyPath: dialogues.Array.data[0].dialogue
+      value: Hi, I've a surprise for you.
+      objectReference: {fileID: 0}
+    - target: {fileID: 6739809323651436686, guid: b973dbffe0a9ad14dbb46748c600c033, type: 3}
+      propertyPath: dialogues.Array.data[1].dialogue
+      value: I am so excited for it!
+      objectReference: {fileID: 0}
+    - target: {fileID: 6739809323651436686, guid: b973dbffe0a9ad14dbb46748c600c033, type: 3}
+      propertyPath: dialogues.Array.data[2].dialogue
+      value: Cool! Press N to see the surprise
+      objectReference: {fileID: 0}
     - target: {fileID: 6739809323651436687, guid: b973dbffe0a9ad14dbb46748c600c033, type: 3}
       propertyPath: m_RootOrder
       value: 20
