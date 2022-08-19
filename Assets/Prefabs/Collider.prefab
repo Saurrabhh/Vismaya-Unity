@@ -298,11 +298,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogues:
   - AvatarId: 0
-    dialogue: Hi! I have a surprise for you.
+    dialogue: Hey, it's time to get a little flashback. Are you ready for a ready?
   - AvatarId: 1
-    dialogue: I am excited.
+    dialogue: I am. Let's goo.
   - AvatarId: 0
-    dialogue: Cool! Press F to see the surprise
+    dialogue: Cool! Press M.
   avatars:
   - name: RoboRao
     sprite: {fileID: 21300000, guid: 2aa967b18a74a8d47b4983aa4d9ace33, type: 3}
