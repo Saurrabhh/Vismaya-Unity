@@ -113,6 +113,10 @@ public class ChatManager : MonoBehaviour, IChatClientListener
         {
             chatClient.Service();
         }
+        if (Input.GetKeyDown(KeyCode.Return))
+        {
+            SendMessages();
+        }
     }
 
     public void GetConnected()
