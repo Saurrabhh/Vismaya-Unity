@@ -15,9 +15,9 @@ public class Artifact : MonoBehaviour
    
     private void OnTriggerEnter(Collider other)
     {
-
+        Player.hasDugged = true;
         Player.artifactsList.Add(this);
-        Destroy(gameObject);
+        m_gameObject.SetActive(false);
         Debug.Log("list entered");
 
 
