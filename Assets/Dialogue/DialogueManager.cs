@@ -71,11 +71,11 @@ public class DialogueManager : MonoBehaviour
         {
             Nextmessage();
         }
-        if (Input.GetKeyDown(KeyCode.N) && isActive == true)
+        else if (Input.GetKeyDown(KeyCode.N) && isActive == true)
         {
             SceneManager.LoadScene((int)Scenes.StoryofRulers);
         }
-        if (Input.GetKeyDown(KeyCode.M) && isActive == true)
+        else if (Input.GetKeyDown(KeyCode.M) && isActive == true)
         {
             SceneManager.LoadScene((int)Scenes.TigerClaw);
         }

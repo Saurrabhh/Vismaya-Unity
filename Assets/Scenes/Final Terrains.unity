@@ -566,10 +566,6 @@ PrefabInstance:
       propertyPath: manager
       value: 
       objectReference: {fileID: 1023791370}
-    - target: {fileID: 6739809323651436686, guid: b973dbffe0a9ad14dbb46748c600c033, type: 3}
-      propertyPath: dialogues.Array.data[0].dialogue
-      value: Hey, it's time to get a little flashback. Are you ready for a ride?
-      objectReference: {fileID: 0}
     - target: {fileID: 6739809323651436687, guid: b973dbffe0a9ad14dbb46748c600c033, type: 3}
       propertyPath: m_RootOrder
       value: 8

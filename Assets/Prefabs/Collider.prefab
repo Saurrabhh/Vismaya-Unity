@@ -298,7 +298,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogues:
   - AvatarId: 0
-    dialogue: Hey, it's time to get a little flashback. Are you ready for a ready?
+    dialogue: Hey, it's time to get a little flashback. Are you ready for a ride?
   - AvatarId: 1
     dialogue: I am. Let's goo.
   - AvatarId: 0
