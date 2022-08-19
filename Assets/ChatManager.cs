@@ -11,17 +11,13 @@ public class ChatManager : MonoBehaviour, IChatClientListener
 {
 
     private ChatClient chatClient;
-    public TMP_InputField playerName;
     public TextMeshProUGUI connectionState;
     public TMP_InputField msgInput;
     public TextMeshProUGUI message;
 
-    public GameObject infoPanel;
     public GameObject messagePanel;
 
-
     private string worldchat;
-    [SerializeField] private string userId;
 
 
     void IChatClientListener.DebugReturn(DebugLevel level, string message)
@@ -36,8 +32,7 @@ public class ChatManager : MonoBehaviour, IChatClientListener
 
     void IChatClientListener.OnConnected()
     {
-        infoPanel.SetActive(false);
-        messagePanel.SetActive(true);
+        
         chatClient.Subscribe(new string[] { worldchat });
         chatClient.SetOnlineStatus(ChatUserStatus.Online);
     }
@@ -93,8 +88,7 @@ public class ChatManager : MonoBehaviour, IChatClientListener
     // Start is called before the first frame update
     void Start()
     {
-        infoPanel.SetActive(true);
-        messagePanel.SetActive(false);
+        
         Application.runInBackground = true;
         if (string.IsNullOrEmpty(PhotonNetwork.PhotonServerSettings.AppSettings.AppIdChat))
         {
@@ -123,7 +117,7 @@ public class ChatManager : MonoBehaviour, IChatClientListener
     {
         Debug.Log("Connecting");
         chatClient = new ChatClient(this);
-        chatClient.Connect(PhotonNetwork.PhotonServerSettings.AppSettings.AppIdChat, PhotonNetwork.AppVersion, new Photon.Chat.AuthenticationValues(playerName.text));
+        chatClient.Connect(PhotonNetwork.PhotonServerSettings.AppSettings.AppIdChat, PhotonNetwork.AppVersion, new Photon.Chat.AuthenticationValues(Player.pName));
     }
 
     public void SendMessages()
