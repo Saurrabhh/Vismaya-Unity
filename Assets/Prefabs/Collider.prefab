@@ -298,11 +298,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogues:
   - AvatarId: 0
-    dialogue: Hey, Let's get a Flashback of a remarkable event.
+    dialogue: Hi! I have a surprise for you.
   - AvatarId: 1
-    dialogue: Let's do this!
+    dialogue: I am excited.
   - AvatarId: 0
-    dialogue: Cool! Press N.
+    dialogue: Cool! Press F to see the surprise
   avatars:
   - name: RoboRao
     sprite: {fileID: 21300000, guid: 2aa967b18a74a8d47b4983aa4d9ace33, type: 3}

@@ -75,10 +75,6 @@ public class DialogueManager : MonoBehaviour
         {
             SceneManager.LoadScene((int)Scenes.StoryofRulers);
         }
-        if (Input.GetKeyDown(KeyCode.M) && isActive == true)
-        {
-            SceneManager.LoadScene((int)Scenes.TigerClaw);
-        }
-
+        
     }
 }
