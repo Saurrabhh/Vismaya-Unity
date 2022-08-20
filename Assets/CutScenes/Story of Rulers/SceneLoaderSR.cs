@@ -5,9 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class SceneLoaderSR : MonoBehaviour
 {
-    int levelindex = 2;
     void Update()
     {
-        SceneManager.LoadScene(levelindex, LoadSceneMode.Single);
+        SceneManager.LoadScene((int)Scenes.Terrain);
     }
 }

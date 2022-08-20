@@ -15,8 +15,8 @@ EditorBuildSettings:
     path: Assets/Scenes/Museum Scene.unity
     guid: c48a20749ae72fe42857fc264a3f5942
   - enabled: 1
-    path: Assets/Scenes/Terrain Scene.unity
-    guid: 9fc0d4010bbf28b4594072e72b8655ab
+    path: Assets/Scenes/Final Terrains.unity
+    guid: b0fe235dd53027d77b62a0415626c959
   - enabled: 1
     path: Assets/Scenes/CutScenes/StoryofRulers.unity
     guid: 45b12972595a0b143b631b1ea6d970bd

@@ -130,6 +130,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 160151311239614917}
     m_Modifications:
+    - target: {fileID: 258031387, guid: 64dce48905ffd9b4293e595fa6941544, type: 3}
+      propertyPath: m_Extents.x
+      value: 0.71
+      objectReference: {fileID: 0}
+    - target: {fileID: 258031387, guid: 64dce48905ffd9b4293e595fa6941544, type: 3}
+      propertyPath: m_Extents.z
+      value: 0.71
+      objectReference: {fileID: 0}
     - target: {fileID: 1617650109, guid: 64dce48905ffd9b4293e595fa6941544, type: 3}
       propertyPath: staminaDrain
       value: 10
@@ -194,6 +202,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerArmature
       objectReference: {fileID: 0}
+    - target: {fileID: 4416926081852918490, guid: 64dce48905ffd9b4293e595fa6941544, type: 3}
+      propertyPath: SprintSpeed
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 64dce48905ffd9b4293e595fa6941544, type: 3}
 --- !u!4 &404821518995770762 stripped
@@ -248,7 +260,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2070925441746177912, guid: a1a802ecaf6775746bb2a929fb554ad8, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -4
+      value: -3.999999
       objectReference: {fileID: 0}
     - target: {fileID: 2070925441746177912, guid: a1a802ecaf6775746bb2a929fb554ad8, type: 3}
       propertyPath: m_LocalRotation.w
@@ -288,7 +300,7 @@ PrefabInstance:
       objectReference: {fileID: 4621815405070577260}
     - target: {fileID: 2070925441746177913, guid: a1a802ecaf6775746bb2a929fb554ad8, type: 3}
       propertyPath: m_Lens.m_SensorSize.x
-      value: 2.2451384
+      value: 1.7777778
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a1a802ecaf6775746bb2a929fb554ad8, type: 3}
