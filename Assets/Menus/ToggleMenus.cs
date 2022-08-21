@@ -39,7 +39,6 @@ public class ToggleMenus : MonoBehaviour
     {
         mainMenu.SetActive(true);
         settingsMenu.SetActive(false);
-        Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
         Time.timeScale = 1f;
     }
@@ -48,7 +47,6 @@ public class ToggleMenus : MonoBehaviour
     {
         mainMenu.SetActive(false);
         settingsMenu.SetActive(true);
-        Cursor.lockState = CursorLockMode.None;
         Time.timeScale = 0f;
        
     }

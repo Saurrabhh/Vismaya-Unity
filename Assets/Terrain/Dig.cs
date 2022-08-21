@@ -22,7 +22,7 @@ public class Dig : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Cursor.lockState = CursorLockMode.None;
+        
         
         if (Input.GetMouseButtonDown(0))
         {

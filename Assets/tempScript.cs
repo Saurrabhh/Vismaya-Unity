@@ -7,6 +7,6 @@ public class tempScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Cursor.lockState = CursorLockMode.None;
+        
     }
 }

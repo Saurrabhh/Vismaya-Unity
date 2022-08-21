@@ -46,11 +46,7 @@ public class Player : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.V))
-        {
-            Cursor.lockState = CursorLockMode.None;
-            Debug.Log("is");
-        }
+        
         if (hasDugged)
         {
             ArtifactInstantiate(artifactsList[0].m_gameObject);
