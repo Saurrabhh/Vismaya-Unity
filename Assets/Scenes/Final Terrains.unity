@@ -1029,6 +1029,14 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
       value: 
       objectReference: {fileID: 359604246}
+    - target: {fileID: 1470789608119591540, guid: eb387c5f14676804785658cc8c9ffc9f, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -91.6499
+      objectReference: {fileID: 0}
+    - target: {fileID: 1470789608119591540, guid: eb387c5f14676804785658cc8c9ffc9f, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -228.89001
+      objectReference: {fileID: 0}
     - target: {fileID: 4814193083877596722, guid: eb387c5f14676804785658cc8c9ffc9f, type: 3}
       propertyPath: m_Name
       value: HUD
@@ -1410,9 +1418,9 @@ MonoBehaviour:
   camera: {fileID: 1203435176}
   brush: 0
   action: 0
-  textureIndex: 0
-  size: 4
-  opacity: 0.5
+  textureIndex: 1
+  size: 0.5
+  opacity: 0.1
   keyToPersistData: 112
   keyToDeleteData: 107
 --- !u!1 &984697499
