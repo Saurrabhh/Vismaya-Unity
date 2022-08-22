@@ -46,8 +46,7 @@ public class ChatManager : MonoBehaviour, IChatClientListener
     {
        for(int i = 0; i < senders.Length; i++)
         {
-            message.text += senders[i] + ":" + messages[i] + ",\n" ;
-            
+            message.text += senders[i] + ":" + messages[i] + ",\n";           
         }
     }
 
@@ -95,8 +94,9 @@ public class ChatManager : MonoBehaviour, IChatClientListener
             Debug.LogError("No app id");
             return;
         }
+        GetConnected();
 
-        worldchat = "world";
+        worldchat = "World";
     }
 
     // Update is called once per frame
@@ -117,12 +117,11 @@ public class ChatManager : MonoBehaviour, IChatClientListener
     {
         Debug.Log("Connecting");
         chatClient = new ChatClient(this);
-        chatClient.Connect(PhotonNetwork.PhotonServerSettings.AppSettings.AppIdChat, PhotonNetwork.AppVersion, new Photon.Chat.AuthenticationValues(Player.pName));
+        chatClient.Connect(PhotonNetwork.PhotonServerSettings.AppSettings.AppIdChat, PhotonNetwork.AppVersion, new Photon.Chat.AuthenticationValues("nguids"));
     }
 
     public void SendMessages()
     {
-
         chatClient.PublishMessage(worldchat, msgInput.text);
         msgInput.text = string.Empty;
     }
