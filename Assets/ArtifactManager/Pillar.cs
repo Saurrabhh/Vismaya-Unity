@@ -7,7 +7,8 @@ public class Pillar : MonoBehaviour
     public Vector3 pillarPosition;
     public bool hasArtifact = false;
     //public static List<Vector3> pillarPosList = new List<Vector3>();
-    //[SerializeField]public GameObject pillar;
+    [SerializeField]public GameObject pillar;
+    public Artifact artifact;
 
     private void Start()
     {
@@ -32,6 +33,10 @@ public class Pillar : MonoBehaviour
 
     private void Update()
     {
-        
+        if (Player.hasDugged)
+        {
+            return;
+        }
     }
+
 }
