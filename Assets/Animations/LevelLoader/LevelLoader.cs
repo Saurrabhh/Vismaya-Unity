@@ -2,49 +2,52 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class LevelLoader : MonoBehaviour
 {
-    public Animator transition;
-    public float transitionTime = 1f;
+    
     AudioSource audioSource;
     [SerializeField] AudioClip transitionAudio;
-    bool makingTransition = false;
+    public Slider slider;
+    public GameObject panel;
+    //bool makingTransition = false;
 
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
     }
 
-    void Update()
+
+    public void LoadLevel(Scenes levelIndex)
     {
-        if (Input.GetKey(KeyCode.T))
-        { 
-            LoadNextLevel();
-        }
+        //makingTransition = true;
+        
+        
+    
+        StartCoroutine(LoadLevelAsync(levelIndex));
     }
 
-    public void LoadNextLevel()
+    IEnumerator LoadLevelAsync(Scenes levelIndex)
     {
-        makingTransition = true;
+        AsyncOperation operation = SceneManager.LoadSceneAsync((int)levelIndex);
+        operation.allowSceneActivation = false;
+
+        while (!operation.isDone)
+        {
+            panel.SetActive(true);
+            float progress = Mathf.Clamp01(operation.progress / 0.9f);
+            Debug.Log(progress);
+            slider.value = progress;
+
+            if(progress >= 1.0f)
+            {
+                operation.allowSceneActivation = true;
+            }
+            yield return null;
+        }
+
         audioSource.Stop();
         audioSource.PlayOneShot(transitionAudio);
-        int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
-        int totalScenes = SceneManager.sceneCountInBuildSettings;
-        int nextSceneIndex = (currentSceneIndex + 1) % totalScenes;
-    
-        StartCoroutine(LoadLevel(nextSceneIndex));
-    }
-
-    IEnumerator LoadLevel(int levelIndex)
-    {
-        // Play Animation
-        transition.SetTrigger("Start");
-
-        // Wait
-        yield return new WaitForSeconds(transitionTime);
-
-        //Load Scene
-        SceneManager.LoadScene(levelIndex);
     }
 }

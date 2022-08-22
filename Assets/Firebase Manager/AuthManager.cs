@@ -20,6 +20,9 @@ public class AuthManager : MonoBehaviour
     [SerializeField] TMP_InputField ageField;
     [SerializeField] TMP_Dropdown genderDropdown;
 
+    [SerializeField] GameObject panel;
+    public LevelLoader levelLoader;
+
     public FirebaseAuth auth;
     public FirebaseUser user;
     public DatabaseReference database;
@@ -30,7 +33,8 @@ public class AuthManager : MonoBehaviour
         database = FirebaseManager.database;
         if(auth.CurrentUser != null)
         {
-            SceneManager.LoadScene((int)Scenes.Museum);
+            panel.SetActive(true);
+            levelLoader.LoadLevel(Scenes.Museum);
         }
     }
 
@@ -57,6 +61,8 @@ public class AuthManager : MonoBehaviour
     {
         //Call the Firebase auth signin function passing the email and password
         var LoginTask = auth.SignInWithEmailAndPasswordAsync(_email, _password);
+        panel.SetActive(true);
+        
 
         //Wait until the task completes
         yield return new WaitUntil(predicate: () => LoginTask.IsCompleted);
@@ -91,11 +97,12 @@ public class AuthManager : MonoBehaviour
         }
         else
         {
+            
             //User is now logged in
             //Now get the result
             user = LoginTask.Result;
             Debug.LogFormat("User signed in successfully: {0} ({1})", user.DisplayName, user.Email);
-            SceneManager.LoadScene((int)Scenes.Museum);
+            levelLoader.LoadLevel(Scenes.Museum);
         }
 
     }
@@ -103,9 +110,15 @@ public class AuthManager : MonoBehaviour
 
     private IEnumerator Register(string _email, string _password, string _confirmpassword, string _name, int _age, string _gender)
     {
+        if(_password != _confirmpassword)
+        {
+            Debug.Log("nooo");
+            yield break;
+        }
 
         //Call the Firebase auth signin function passing the email and password
         var RegisterTask = auth.CreateUserWithEmailAndPasswordAsync(_email, _password);
+        panel.SetActive(true);
         //Wait until the task completes
         yield return new WaitUntil(predicate: () => RegisterTask.IsCompleted);
 
@@ -172,7 +185,7 @@ public class AuthManager : MonoBehaviour
                     //string json = JsonUtility.ToJson(playerData);
                     //database.Child("users").Child(user.UserId).SetRawJsonValueAsync(json);
                     SavePlayerData.SavePlayer(player);
-                    SceneManager.LoadScene(Player.currentSceneIndex);
+                    levelLoader.LoadLevel(Scenes.Museum);
                     
                 }
             }
