@@ -21,9 +21,16 @@ public class LoadScene : MonoBehaviour
     }
     public void OpenHUD(Canvas hud)
     {
+
+        StartCoroutine(t(hud));
+        
+    }
+
+    IEnumerator t(Canvas hud)
+    {
+        yield return new WaitForSeconds(0.01f);
         GameObject settings = GameObject.FindGameObjectWithTag("Settings");
         hud.gameObject.SetActive(true);
         settings.gameObject.SetActive(false);
-        
     }
 }
