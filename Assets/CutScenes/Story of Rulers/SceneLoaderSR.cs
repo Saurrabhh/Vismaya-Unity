@@ -7,6 +7,6 @@ public class SceneLoaderSR : MonoBehaviour
 {
     void Update()
     {
-        SceneManager.LoadScene((int)Scenes.Terrain);
+        SceneManager.LoadScene((int)Scenes.Museum);
     }
 }

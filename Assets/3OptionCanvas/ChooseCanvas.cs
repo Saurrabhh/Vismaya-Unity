@@ -1,12 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ChooseCanvas : MonoBehaviour
 {
     public void OnClick_Battlefield()
     {
-        Debug.Log("Battlefield tp");
+        SceneManager.LoadScene((int)Scenes.Terrain);
     }
 
     public void OnClick_Entertainment()
