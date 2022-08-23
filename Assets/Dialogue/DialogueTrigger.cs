@@ -19,12 +19,12 @@ public class DialogueTrigger : MonoBehaviour
         manager.OpenDialogue(dialogues, avatars);
        
     }
-    private void OnTriggerStay(Collider other)
+    private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.F))
+        if (Input.GetKeyDown(KeyCode.F) && start)
         {
-            Debug.Log("msdcmdsc");
             StartCoroutine(StartDialogueAsync());
+            start = false;
         }
 
     }
@@ -33,7 +33,9 @@ public class DialogueTrigger : MonoBehaviour
     IEnumerator StartDialogueAsync()
     {
         animator.SetTrigger("Buzzer");
-        yield return new WaitForSeconds(clip.length);
+        Player player = FindObjectOfType<Player>();
+        player.gameObject.transform.rotation = Quaternion.Euler(0, -90, 0);
+        yield return new WaitForSeconds(clip.length * 2);
         StartDialogue();
     }
 

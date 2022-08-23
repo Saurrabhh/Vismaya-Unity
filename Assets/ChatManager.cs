@@ -66,7 +66,7 @@ public class ChatManager : MonoBehaviour, IChatClientListener
         {
             this.chatClient.PublishMessage(channel, "joined");
         }
-        connectionState.text = "connected";
+        connectionState.text = "Connected";
     }
 
     void IChatClientListener.OnUnsubscribed(string[] channels)
@@ -117,7 +117,7 @@ public class ChatManager : MonoBehaviour, IChatClientListener
     {
         Debug.Log("Connecting");
         chatClient = new ChatClient(this);
-        chatClient.Connect(PhotonNetwork.PhotonServerSettings.AppSettings.AppIdChat, PhotonNetwork.AppVersion, new Photon.Chat.AuthenticationValues("nguids"));
+        chatClient.Connect(PhotonNetwork.PhotonServerSettings.AppSettings.AppIdChat, PhotonNetwork.AppVersion, new Photon.Chat.AuthenticationValues(Player.pName));
     }
 
     public void SendMessages()

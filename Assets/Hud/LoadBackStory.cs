@@ -8,11 +8,13 @@ public class LoadBackStory : MonoBehaviour
     public GameObject canvas;
     public Animator animator;
     public AnimationClip clip;
-    private void OnTriggerStay(Collider other)
+    public bool start;
+    private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.F))
+        if (Input.GetKeyDown(KeyCode.F) && start)
         {
             StartCoroutine(StartPick());
+            start = false;
         }
     }
 
@@ -26,10 +28,12 @@ public class LoadBackStory : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
+        start = false;
         canvas.SetActive(false);
     }
     private void OnTriggerEnter(Collider other)
     {
+        start = true;
         canvas.SetActive(true);
     }
 }

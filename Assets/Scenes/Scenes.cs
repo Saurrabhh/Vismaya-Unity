@@ -7,9 +7,10 @@ public enum Scenes
     Vismaya,
     Auth,
     Museum,
+    Summary,
     Terrain,
     StoryofRulers,
     TigerClaw,
-    Summary
+    Chat
 
 }

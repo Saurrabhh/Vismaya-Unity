@@ -13,6 +13,7 @@ TagManager:
   - collider
   - metal detector
   - bagh
+  - Chat
   layers:
   - Default
   - TransparentFX
