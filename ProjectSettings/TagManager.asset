@@ -9,6 +9,10 @@ TagManager:
   - Bullet
   - Settings
   - HUD
+  - bookCollider
+  - collider
+  - metal detector
+  - bagh
   layers:
   - Default
   - TransparentFX
