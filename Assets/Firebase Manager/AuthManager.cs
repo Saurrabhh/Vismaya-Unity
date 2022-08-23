@@ -26,16 +26,21 @@ public class AuthManager : MonoBehaviour
     public FirebaseAuth auth;
     public FirebaseUser user;
     public DatabaseReference database;
+    public Player player;
+    string format;
     private void Start()
     {
         auth = FirebaseManager.auth;
         user = FirebaseManager.user;
         database = FirebaseManager.database;
+        format = "vismaya";
         if(auth.CurrentUser != null)
         {
             panel.SetActive(true);
+            player.LoadPlayer(auth.CurrentUser.UserId, format);
             levelLoader.LoadLevel(Scenes.Museum);
         }
+        
     }
 
 
@@ -101,6 +106,7 @@ public class AuthManager : MonoBehaviour
             //User is now logged in
             //Now get the result
             user = LoginTask.Result;
+            player.LoadPlayer(user.UserId, format);
             Debug.LogFormat("User signed in successfully: {0} ({1})", user.DisplayName, user.Email);
             levelLoader.LoadLevel(Scenes.Museum);
         }
@@ -180,11 +186,9 @@ public class AuthManager : MonoBehaviour
                     Player.uid = user.UserId;
                     Player.currentSceneIndex = (int)Scenes.Museum;
                     Player.money = 100;
-                    Player player = FindObjectOfType<Player>();
-                    //PlayerData playerData = new PlayerData(player);
-                    //string json = JsonUtility.ToJson(playerData);
-                    //database.Child("users").Child(user.UserId).SetRawJsonValueAsync(json);
-                    SavePlayerData.SavePlayer(player);
+                    
+                    
+                    SavePlayerData.SavePlayer(player, format);
                     levelLoader.LoadLevel(Scenes.Museum);
                     
                 }

@@ -8,12 +8,19 @@ public class Tool : MonoBehaviour
 {
     public string id;
     public int cost;
-    public Image img;
+
+    public Tool(string id, int cost)
+    {
+        this.id = id;
+        this.cost = cost;
+    }
+
+    //public Image img;
     private void Awake()
     {
         id = transform.name;
-        Image[] imges = GetComponentsInChildren<Image>();
-        img = imges[1];
+        //Image[] imges = GetComponentsInChildren<Image>();
+        //img = imges[1];
     }
 
     public void On_Click_Buy()
@@ -22,10 +29,13 @@ public class Tool : MonoBehaviour
         
         if (Player.money >= cost)
         {
+            Debug.Log(Player.uid);
+            SavePlayerData.SaveTools(Player.uid, "tools", this);
             Player.money -= cost;
             Destroy(gameObject.GetComponentInChildren<Button>().gameObject);
             gameObject.transform.SetParent(newParent);
-            Player.totalTools.Add(this);
+            Player.totalTools.Add(gameObject.AddComponent<Tool>());
+            
         }
         else
         {
@@ -37,3 +47,6 @@ public class Tool : MonoBehaviour
 
 
 }
+
+
+

@@ -7,13 +7,17 @@ using Firebase.Storage;
 using Firebase;
 using Firebase.Database;
 using System.Threading.Tasks;
+using Firebase.Extensions;
 
 public static class SavePlayerData 
 {
-    public static void SavePlayer(Player player)
+    public static void SavePlayer(Player player, string format)
     {
+        StorageReference storage = FirebaseManager.storage;
+        DatabaseReference database = FirebaseManager.database;
+
         PlayerData playerData = new PlayerData(player);
-        string path = Application.persistentDataPath + $"/{playerData.uid}.vismaya";
+        string path = Application.persistentDataPath + $"/{playerData.uid}.{format}";
         Debug.Log(path);
         FileStream fs = File.Create(path);
         BinaryFormatter formatter = new BinaryFormatter();
@@ -23,10 +27,9 @@ public static class SavePlayerData
         string json = JsonUtility.ToJson(playerData);
 
 
-        StorageReference storage = FirebaseManager.storage;
-        DatabaseReference database = FirebaseManager.database;
         
-        StorageReference riversRef = storage.Child($"{playerData.uid}.vismaya");
+        
+        StorageReference riversRef = storage.Child($"{playerData.uid}.{format}");
         database.Child("Users").Child(playerData.uid).SetRawJsonValueAsync(json);
 
         // Upload the file to the path "images/rivers.jpg"
@@ -48,9 +51,9 @@ public static class SavePlayerData
             });
     }
 
-    public static PlayerData LoadPlayer()
+    public static PlayerData LoadPlayer(string uid, string format)
     {
-        string path = Application.persistentDataPath + $"/{Player.uid}.vismaya";
+        string path = Application.persistentDataPath + $"/{uid}.{format}";
         if (File.Exists(path))
         {
             BinaryFormatter formatter = new BinaryFormatter();
@@ -62,8 +65,56 @@ public static class SavePlayerData
         }
         else
         {
-            Debug.LogError("Not Found" + path);
+            bool downloaded = false;
+            StorageReference dataFile = FirebaseManager.storage.Child($"{uid}.{format}");
+            dataFile.GetFileAsync(path).ContinueWithOnMainThread(task => {
+                if (!task.IsFaulted && !task.IsCanceled)
+                {
+                    Debug.Log("File downloaded.");
+                    downloaded = true;
+                }
+            });
+            if (downloaded)
+            {
+                LoadPlayer(uid, format);
+            }
             return null;    
         }
+    }
+
+    public static void SaveTools(string uid, string format, Tool tool)
+    {
+        StorageReference storage = FirebaseManager.storage;
+        DatabaseReference database = FirebaseManager.database;
+        string path = Application.persistentDataPath + $"/{uid}.{format}";
+        FileStream fs = File.Create(path);
+        BinaryFormatter formatter = new BinaryFormatter();
+        ToolData toolData = new(tool);
+
+        formatter.Serialize(fs, ToolData.tools);
+        fs.Close();
+        //string json = JsonUtility.ToJson(Player.totalTools);
+
+
+        StorageReference riversRef = storage.Child($"{uid}.{format}");
+        //database.Child("Users").Child(playerData.uid).SetRawJsonValueAsync(json);
+
+        // Upload the file to the path "images/rivers.jpg"
+        riversRef.PutFileAsync(path)
+            .ContinueWith((Task<StorageMetadata> task) => {
+                if (task.IsFaulted || task.IsCanceled)
+                {
+                    Debug.Log(task.Exception.ToString());
+                    // Uh-oh, an error occurred!
+                }
+                else
+                {
+                    // Metadata contains file metadata such as size, content-type, and download URL.
+                    StorageMetadata metadata = task.Result;
+                    string md5Hash = metadata.Md5Hash;
+                    Debug.Log("Finished uploading...");
+                    Debug.Log("md5 hash = " + md5Hash);
+                }
+            });
     }
 }

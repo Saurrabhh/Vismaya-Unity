@@ -2600,6 +2600,7 @@ MonoBehaviour:
   genderDropdown: {fileID: 714011011}
   panel: {fileID: 390872132}
   levelLoader: {fileID: 299359609}
+  player: {fileID: 957873488}
 --- !u!114 &1065750612
 MonoBehaviour:
   m_ObjectHideFlags: 0

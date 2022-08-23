@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+
 public class Player : MonoBehaviour
 {
     public static string pName;
@@ -11,27 +12,25 @@ public class Player : MonoBehaviour
     public static string gender;
     public static int currentSceneIndex;
     public static int money = 100;
-    public static List<Tool> totalTools = new List<Tool>();
-    public static List<Tool> activeTools = new List<Tool>();
-    public static List<Artifact> artifactsList = new List<Artifact> ();
-    
     public static bool hasDugged = false;
 
+    public static List<Tool> totalTools = new();
+    public static List<Tool> activeTools = new();
+    public static List<Artifact> artifactsList = new();
+    
+    
+
    
-    public void SavePlayer()
+    public void SavePlayer(string format)
     {
         //add scene index
-        SavePlayerData.SavePlayer(this);
+        SavePlayerData.SavePlayer(this, format);
     }
 
-    private void Awake()
-    {
-        //LoadPlayer();
-    }
 
-    public void LoadPlayer()
+    public void LoadPlayer(string uId, string format)
     {
-        PlayerData playerData = SavePlayerData.LoadPlayer();
+        PlayerData playerData = SavePlayerData.LoadPlayer(uId, format);
         pName = playerData.name;
         age = playerData.age;
         uid = playerData.uid;
@@ -39,10 +38,9 @@ public class Player : MonoBehaviour
         gender = playerData.gender; 
         currentSceneIndex = playerData.currentSceneIndex;
         money = playerData.money;
-
+        hasDugged = playerData.hasDugged;
         transform.position = playerData.ReturnPosition();
         transform.rotation = playerData.ReturnRotation();
-        Debug.Log(playerData.ReturnPosition());
     }
 
    
