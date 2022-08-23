@@ -33,7 +33,8 @@ public class CollectionOfArtifact : MonoBehaviour
             if (allArtifact.artifactName == activeArtifact.artifactName)
             {
                 //instantiate 
-                activeArtifact.InstantiateOnPillar(allArtifact.m_gameObject, allArtifact.pillarArtifact.transform.position);
+                GameObject artifact = activeArtifact.InstantiateOnPillar(allArtifact.m_gameObject, allArtifact.pillarArtifact.transform.position);
+                artifact.transform.SetParent(allArtifact.pillarArtifact.transform);
 
             }
             else

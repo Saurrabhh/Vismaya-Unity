@@ -97,6 +97,9 @@ namespace StarterAssets
         private int _animIDJump;
         private int _animIDFreeFall;
         private int _animIDMotionSpeed;
+        private int _animIDDig;
+        private int _animIDBookPick;
+        private int _animIDBuzzer;
 
 #if ENABLE_INPUT_SYSTEM && STARTER_ASSETS_PACKAGES_CHECKED
         private PlayerInput _playerInput;
@@ -178,6 +181,9 @@ namespace StarterAssets
             _animIDJump = Animator.StringToHash("Jump");
             _animIDFreeFall = Animator.StringToHash("FreeFall");
             _animIDMotionSpeed = Animator.StringToHash("MotionSpeed");
+            _animIDDig = Animator.StringToHash("Dig");
+            _animIDBookPick = Animator.StringToHash("BookPick");
+            _animIDBuzzer = Animator.StringToHash("Buzzer");
         }
 
         private void GroundedCheck()

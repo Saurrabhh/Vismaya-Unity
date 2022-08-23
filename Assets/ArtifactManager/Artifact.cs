@@ -21,8 +21,6 @@ public class Artifact : MonoBehaviour
         
         Debug.Log("list entered");
         m_gameObject.SetActive(false);
-
-        Debug.Log("list ");
         
     }
 
@@ -33,13 +31,15 @@ public class Artifact : MonoBehaviour
 
     
 
-    public void InstantiateOnPillar(GameObject prefab, Vector3 pos)
+    public GameObject InstantiateOnPillar(GameObject prefab, Vector3 pos)
     {
         Vector3 finalPos;
         finalPos.x = pos.x;
         finalPos.y = pos.y + 1;
         finalPos.z = pos.z;
-        Instantiate(prefab, finalPos, Quaternion.identity).gameObject.SetActive(true);
+        GameObject a = Instantiate(prefab, finalPos, Quaternion.identity);
+        a.gameObject.SetActive(true);
+        return a;
     }
 
 }

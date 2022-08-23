@@ -6,9 +6,13 @@ public class DialogueTrigger : MonoBehaviour
 {
     public Dialogue[] dialogues;
     public Avatar[] avatars;
+    public Animator animator;
+    [SerializeField] AnimationClip clip;
+    public bool start = false;
     
     [SerializeField] DialogueManager manager;
     public GameObject canvas;
+
     public void StartDialogue()  
     {
         manager.gameObject.SetActive(true);
@@ -19,19 +23,29 @@ public class DialogueTrigger : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.F))
         {
-            Debug.Log("ggg");
-            StartDialogue();
+            Debug.Log("msdcmdsc");
+            StartCoroutine(StartDialogueAsync());
         }
-            
+
+    }
+    
+
+    IEnumerator StartDialogueAsync()
+    {
+        animator.SetTrigger("Buzzer");
+        yield return new WaitForSeconds(clip.length);
+        StartDialogue();
     }
 
     private void OnTriggerEnter(Collider other)
     {
+        start = true;
         canvas.SetActive(true);
     }
 
     private void OnTriggerExit(Collider other)
     {
+        start = false;
         canvas.SetActive(false);
     }
 }
