@@ -14,7 +14,7 @@ public class Player : MonoBehaviour
     public static List<Tool> totalTools = new List<Tool>();
     public static List<Tool> activeTools = new List<Tool>();
     public static List<Artifact> artifactsList = new List<Artifact> ();
-    public static List<Pillar> pillarInfo = new List<Pillar> ();
+    
     public static bool hasDugged = false;
 
    
@@ -45,47 +45,9 @@ public class Player : MonoBehaviour
         Debug.Log(playerData.ReturnPosition());
     }
 
-    private void Update()
-    {
-        if (SceneManager.GetActiveScene().buildIndex == (int)Scenes.Museum)
-        {
+   
 
-            if (hasDugged)
-            {
-
-                //ArtifactInstantiate(artifactsList[0].m_gameObject, Vector3.positiveInfinity, pillarInfo[0]);
-                Debug.Log(artifactsList[0].m_gameObject);
-                Debug.Log("aa");
-                foreach(var artifact in artifactsList)
-                {
-                    Debug.Log(artifact.artifactName);
-                }
-                hasDugged = false;
-            }
-        }
-         
-    }
-
-    private void Start()
-    {
-        Debug.Log(SceneManager.GetActiveScene().buildIndex);
-    }
-
-    public void ArtifactInstantiate(GameObject prefab, Vector3 pos, Pillar pillar)
-    {
-        Vector3 finalPosition;
-        finalPosition.x = pillar.transform.position.x;
-        finalPosition.y = pillar.transform.position.y + 1;
-        finalPosition.z = pillar.transform.position.z;
-        
-        //Instantiate(prefab, pos, Quaternion.identity).gameObject.SetActive(true);
-        
-            prefab.transform.SetParent(pillar.transform);
-            prefab.transform.position = finalPosition;
-            prefab.gameObject.SetActive(true);
-        }
-
-    
+   
 
 
 }

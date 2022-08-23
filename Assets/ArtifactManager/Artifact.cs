@@ -11,15 +11,16 @@ public class Artifact : MonoBehaviour
     public string artifactName;
     public int artifact_id;
     public GameObject m_gameObject;
-    public GameObject pillar;
+    [SerializeField] public GameObject pillarArtifact;
+    
     
     private void OnTriggerEnter(Collider other)
     {
         Player.hasDugged = true;
         Player.artifactsList.Add(this);
-       
+        
         Debug.Log("list entered");
-
+        m_gameObject.SetActive(false);
 
         Debug.Log("list ");
         
@@ -32,6 +33,13 @@ public class Artifact : MonoBehaviour
 
     
 
-    
+    public void InstantiateOnPillar(GameObject prefab, Vector3 pos)
+    {
+        Vector3 finalPos;
+        finalPos.x = pos.x;
+        finalPos.y = pos.y + 1;
+        finalPos.z = pos.z;
+        Instantiate(prefab, finalPos, Quaternion.identity).gameObject.SetActive(true);
+    }
 
 }
