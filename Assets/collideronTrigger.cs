@@ -11,6 +11,9 @@ public class collideronTrigger : MonoBehaviour
     }
     void OnTriggerEnter(Collider other)
     {
-        artifactCollision.Play();
+        if(other.tag == "bagh")
+        {
+            artifactCollision.Play();
+        }
     }
 }
