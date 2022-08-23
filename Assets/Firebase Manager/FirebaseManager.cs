@@ -7,6 +7,7 @@ using Firebase.Database;
 using Firebase.Storage;
 using System;
 using UnityEngine.SceneManagement;
+using System.Linq;
 
 public class FirebaseManager : MonoBehaviour
 {
@@ -14,6 +15,8 @@ public class FirebaseManager : MonoBehaviour
     public static FirebaseUser user;
     public static DatabaseReference database;
     public static StorageReference storage;
+
+    
 
     public DependencyStatus dependancyStatus;
 
@@ -66,4 +69,5 @@ public class FirebaseManager : MonoBehaviour
         }
     }
 
+    
 }
