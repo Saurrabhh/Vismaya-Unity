@@ -996,6 +996,7 @@ MonoBehaviour:
   animator: {fileID: 1023918049}
   clip: {fileID: 7400000, guid: fe9f4249d5310c94fb499d5012d35624, type: 2}
   start: 0
+  bookCost: 30
 --- !u!1001 &236974158
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2058,11 +2059,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3395564338099430633, guid: f01055a13357fa140bffab5a8713fca8, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -33641.305
+      value: -39919.27
       objectReference: {fileID: 0}
     - target: {fileID: 3395564338099430633, guid: f01055a13357fa140bffab5a8713fca8, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 37903.496
+      value: 44989.004
       objectReference: {fileID: 0}
     - target: {fileID: 3395564338255846252, guid: f01055a13357fa140bffab5a8713fca8, type: 3}
       propertyPath: m_AnchorMax.y
