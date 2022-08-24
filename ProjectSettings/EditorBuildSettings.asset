@@ -29,5 +29,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/ChatScene.unity
     guid: 8b81674eded333e4388485a6aea9c812
+  - enabled: 1
+    path: Assets/Scenes/LeaderBoard2.unity
+    guid: 9ab9aead6e34d5142842ee3a84798936
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 9e7be553448fa2546aea5752021cbcf7, type: 2}

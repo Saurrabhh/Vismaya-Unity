@@ -11,6 +11,7 @@ public enum Scenes
     Terrain,
     StoryofRulers,
     TigerClaw,
-    Chat
+    Chat,
+    LeaderBoard
 
 }
