@@ -6,6 +6,7 @@ using UnityEngine;
 
 public class Diggggg : MonoBehaviour
 {
+    
     [Header("Async parameters")]
     [Tooltip("Enable to edit the terrain asynchronously and avoid impacting the frame rate too much.")]
     public bool editAsynchronously = true;
@@ -66,6 +67,7 @@ public class Diggggg : MonoBehaviour
                 }
                 diggerNavMeshRuntime.UpdateNavMeshAsync(() => Debug.Log("NavMesh has been updated."));
                 Debug.Log("NavMesh is updating...");
+                
             }
         }
 

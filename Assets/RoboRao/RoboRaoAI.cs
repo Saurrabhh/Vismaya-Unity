@@ -6,7 +6,7 @@ using UnityEngine.AI;
 public class RoboRaoAI : MonoBehaviour
 {
     [SerializeField] Transform player;
-    [SerializeField] float offsetDistance = 1;
+    [SerializeField] public float offsetDistance = 1;
     [SerializeField] float interactDistance = 0.8f;
     [SerializeField] float offsetAngle = 45;
     
