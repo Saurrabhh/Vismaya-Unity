@@ -9,12 +9,23 @@ public class LoadBackStory : MonoBehaviour
     public Animator animator;
     public AnimationClip clip;
     public bool start;
+    [SerializeField]int bookCost = 30;
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.F) && start)
         {
-            StartCoroutine(StartPick());
-            start = false;
+            if(bookCost <= Player.money)
+            {
+                Player.money -= bookCost;
+                StartCoroutine(StartPick());
+                start = false;
+                
+            }
+            else
+            {
+                Debug.Log("not enough money");
+            }
+            
         }
     }
 
