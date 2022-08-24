@@ -25,6 +25,7 @@ public class Diggggg : MonoBehaviour
     public KeyCode keyToDeleteData = KeyCode.K;
 
     private DiggerMasterRuntime diggerMasterRuntime;
+    private DiggerNavMeshRuntime diggerNavMeshRuntime;
 
     private void Start()
     {
@@ -35,14 +36,23 @@ public class Diggggg : MonoBehaviour
             Debug.LogWarning(
                 "DiggerRuntimeUsageExample component requires DiggerMasterRuntime component to be setup in the scene. DiggerRuntimeUsageExample will be disabled.");
         }
+        diggerNavMeshRuntime = FindObjectOfType<DiggerNavMeshRuntime>();
+        if (!diggerNavMeshRuntime)
+        {
+            enabled = false;
+            Debug.LogWarning("DiggerNavMeshUsageExample requires DiggerNavMeshRuntime component to be setup in the scene. DiggerNavMeshUsageExample will be disabled.");
+            return;
+        }
+
+        // this is mandatory and should be called only once in a Start method
+        diggerNavMeshRuntime.CollectNavMeshSources();
     }
 
     private void Update()
     {
         
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            
+        if (Input.GetMouseButtonDown(0))
+        {           
             // Perform a raycast to find terrain surface and call Modify method of DiggerMasterRuntime to edit it
             if (Physics.Raycast(g.transform.position, g.transform.forward, out var hit, 2000f))
             {
@@ -54,6 +64,8 @@ public class Diggggg : MonoBehaviour
                 {
                     diggerMasterRuntime.Modify(hit.point, brush, action, textureIndex, opacity, size);
                 }
+                diggerNavMeshRuntime.UpdateNavMeshAsync(() => Debug.Log("NavMesh has been updated."));
+                Debug.Log("NavMesh is updating...");
             }
         }
 
