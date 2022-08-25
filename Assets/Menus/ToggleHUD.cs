@@ -32,7 +32,8 @@ public void OpenChat(Canvas chat)
     {
         chat.GetComponent<Canvas>().enabled = true;
         hud.gameObject.SetActive(false);
-        
+        player.GetComponent<ThirdPersonController>().enabled = false;
+
     }
     public void OpenHUD(Canvas hud)
     {
@@ -44,6 +45,7 @@ public void OpenChat(Canvas chat)
     {
         chat = GameObject.FindGameObjectWithTag("Chat");
         chat.GetComponent<Canvas>().enabled = false;
+        player.GetComponent<ThirdPersonController>().enabled = false;
         hud.gameObject.SetActive(true);
 
 
@@ -55,6 +57,7 @@ public void OpenChat(Canvas chat)
         settings = GameObject.FindGameObjectWithTag("Settings");
         settings.GetComponent<Canvas>().enabled = false;        
         hud.gameObject.SetActive(true);
+        player.GetComponent<ThirdPersonController>().enabled = true;
         yield return null;
     }
 }
