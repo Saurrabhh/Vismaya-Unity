@@ -42,7 +42,7 @@ public class LeaderBoardManager : MonoBehaviour
     {
         while (true)
         {
-            var DbTask = database.Child("Users").OrderByChild("money").GetValueAsync();
+            var DbTask = database.Child("Users").OrderByChild("expPoints").GetValueAsync();
             yield return new WaitUntil(predicate: () => DbTask.IsCompleted);
 
             if (DbTask.Exception != null)
@@ -65,7 +65,7 @@ public class LeaderBoardManager : MonoBehaviour
                 foreach (DataSnapshot dataSnapshot in snapshot.Children.Reverse<DataSnapshot>())
                 {
                     string username = dataSnapshot.Child("name").Value.ToString();
-                    int money = int.Parse(dataSnapshot.Child("money").Value.ToString());
+                    int money = int.Parse(dataSnapshot.Child("expPoints").Value.ToString());
                     Debug.Log(username);
                     //instantiate new scoreboard element
                     GameObject leaderBoardElement = Instantiate(leaderBoard);

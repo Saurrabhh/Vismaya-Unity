@@ -36,6 +36,7 @@ public class AuthManager : MonoBehaviour
         format = "vismaya";
         if(auth.CurrentUser != null)
         {
+            Debug.Log("lalalalalala");
             panel.SetActive(true);
             player.LoadPlayer(auth.CurrentUser.UserId, format);
             levelLoader.LoadLevel(Scenes.Museum);

@@ -1,12 +1,15 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Digger.Modules.Core.Sources;
 using Digger.Modules.Runtime.Sources;
 using UnityEngine;
+using StarterAssets;
 
 public class Diggggg : MonoBehaviour
 {
-    
+    public Animator animator;
+    public AnimationClip clip;
     [Header("Async parameters")]
     [Tooltip("Enable to edit the terrain asynchronously and avoid impacting the frame rate too much.")]
     public bool editAsynchronously = true;
@@ -30,6 +33,7 @@ public class Diggggg : MonoBehaviour
 
     private void Start()
     {
+        animator = GetComponent<Animator>();
         diggerMasterRuntime = FindObjectOfType<DiggerMasterRuntime>();
         if (!diggerMasterRuntime)
         {
@@ -57,17 +61,7 @@ public class Diggggg : MonoBehaviour
             // Perform a raycast to find terrain surface and call Modify method of DiggerMasterRuntime to edit it
             if (Physics.Raycast(g.transform.position, g.transform.forward, out var hit, 2000f))
             {
-                if (editAsynchronously)
-                {
-                    diggerMasterRuntime.ModifyAsyncBuffured(hit.point, brush, action, textureIndex, opacity, size);
-                }
-                else
-                {
-                    diggerMasterRuntime.Modify(hit.point, brush, action, textureIndex, opacity, size);
-                }
-                diggerNavMeshRuntime.UpdateNavMeshAsync(() => Debug.Log("NavMesh has been updated."));
-                Debug.Log("NavMesh is updating...");
-                
+                StartCoroutine(DigTerrain(hit));
             }
         }
 
@@ -87,4 +81,24 @@ public class Diggggg : MonoBehaviour
         }
     }
 
+    IEnumerator DigTerrain(RaycastHit hit)
+    {
+        GetComponent<ThirdPersonController>().enabled = false;
+        animator.SetTrigger("Dig");
+        yield return new WaitForSeconds(clip.length);
+
+        if (editAsynchronously)
+        {
+            diggerMasterRuntime.ModifyAsyncBuffured(hit.point, brush, action, textureIndex, opacity, size);
+        }
+        else
+        {
+            diggerMasterRuntime.Modify(hit.point, brush, action, textureIndex, opacity, size);
+        }
+        diggerNavMeshRuntime.UpdateNavMeshAsync(() => Debug.Log("NavMesh has been updated."));
+        Debug.Log("NavMesh is updating...");
+        GetComponent<ThirdPersonController>().enabled = true;
+    }
+
+    
 }

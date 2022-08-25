@@ -69,7 +69,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
-  offsetDistance: 1
+  offsetDistance: 3
   interactDistance: 0.8
   offsetAngle: 45
 --- !u!1001 &786390263943812136

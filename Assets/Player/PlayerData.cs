@@ -15,6 +15,7 @@ public class PlayerData
     public int currentSceneIndex;
     public int money;
     public bool hasDugged;
+    public int expPoints;
 
     public PlayerData(Player player)
     {
@@ -30,6 +31,7 @@ public class PlayerData
         this.rotation = new float[4] { rot.x, rot.y, rot.z, rot.w };
         this.money = Player.money;
         this.hasDugged = Player.hasDugged;
+        this.expPoints = Player.expPoints;
     }
 
     public Vector3 ReturnPosition()

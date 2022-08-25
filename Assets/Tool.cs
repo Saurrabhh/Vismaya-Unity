@@ -30,7 +30,7 @@ public class Tool : MonoBehaviour
         if (Player.money >= cost)
         {
             Debug.Log(Player.uid);
-            SavePlayerData.SaveTools(Player.uid, "tools", this);
+            SavePlayerData.SaveTools(Player.uid, id, this);
             Player.money -= cost;
             Destroy(gameObject.GetComponentInChildren<Button>().gameObject);
             gameObject.transform.SetParent(newParent);
