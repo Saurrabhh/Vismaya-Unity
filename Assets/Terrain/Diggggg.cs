@@ -10,6 +10,7 @@ public class Diggggg : MonoBehaviour
 {
     public Animator animator;
     public AnimationClip clip;
+    public GameObject gg;
     [Header("Async parameters")]
     [Tooltip("Enable to edit the terrain asynchronously and avoid impacting the frame rate too much.")]
     public bool editAsynchronously = true;
@@ -83,6 +84,7 @@ public class Diggggg : MonoBehaviour
 
     IEnumerator DigTerrain(RaycastHit hit)
     {
+        gg.SetActive(true);
         GetComponent<ThirdPersonController>().enabled = false;
         animator.SetTrigger("Dig");
         yield return new WaitForSeconds((clip.length/0.25f));
@@ -98,6 +100,7 @@ public class Diggggg : MonoBehaviour
         diggerNavMeshRuntime.UpdateNavMeshAsync(() => Debug.Log("NavMesh has been updated."));
         Debug.Log("NavMesh is updating...");
         GetComponent<ThirdPersonController>().enabled = true;
+        gg.SetActive(false);
     }
 
     
