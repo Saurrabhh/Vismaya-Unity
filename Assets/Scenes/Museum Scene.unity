@@ -600,7 +600,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5918627261595105472, guid: 6e2ec0c26a97b4340beed8dff2569b8b, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5918627261595105484, guid: 6e2ec0c26a97b4340beed8dff2569b8b, type: 3}
       propertyPath: m_Pivot.x
@@ -1669,7 +1669,7 @@ Light:
   m_RenderMode: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 55
   m_RenderingLayerMask: 1
   m_Lightmapping: 4
   m_LightShadowCasterMode: 0
@@ -2361,11 +2361,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3395564338099430633, guid: f01055a13357fa140bffab5a8713fca8, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -182453.94
+      value: -212281.5
       objectReference: {fileID: 0}
     - target: {fileID: 3395564338099430633, guid: f01055a13357fa140bffab5a8713fca8, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 205876.12
+      value: 239594.05
       objectReference: {fileID: 0}
     - target: {fileID: 3395564338255846252, guid: f01055a13357fa140bffab5a8713fca8, type: 3}
       propertyPath: m_AnchorMax.y
@@ -3751,7 +3751,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1967496567451446685, guid: cf4d699cea132d048be6b36747a9f448, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1967496567451446686, guid: cf4d699cea132d048be6b36747a9f448, type: 3}
       propertyPath: m_RootOrder
@@ -4092,7 +4092,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!64 &924631676011562029
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -4309,7 +4309,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2246214205473675537, guid: 7bb9015b2ce492b429af4a995d9de2f3, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2246214205473675539, guid: 7bb9015b2ce492b429af4a995d9de2f3, type: 3}
       propertyPath: m_RootOrder
@@ -5731,13 +5731,13 @@ GameObject:
   - component: {fileID: 6388697009605627334}
   - component: {fileID: 2638725470203082490}
   - component: {fileID: 8279019129748265269}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Slab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 8
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &7272638918317557327
 Transform:
   m_ObjectHideFlags: 0

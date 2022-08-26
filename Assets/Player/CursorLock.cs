@@ -7,35 +7,33 @@ public class CursorLock : MonoBehaviour
     bool hide = true;
     float lastStep, timeBetweenSteps = 0.5f;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
+    
     void Update()
-    {
-        
-
+    {      
         if (Input.GetKeyDown(KeyCode.Escape)){
             if (Time.time - lastStep > timeBetweenSteps)
             {
                 lastStep = Time.time;
                 hide = !hide;
-                Debug.Log("kkkkk");
+            }
+
+            if (hide)
+            {
+                Cursor.visible = false;
             }
         }
 
 
         if (hide)
         {
-            Cursor.lockState = CursorLockMode.None;
+            Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
         }
         else
         {
             Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.None;
+            
         }
     }
 
