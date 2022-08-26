@@ -21,6 +21,7 @@ public class Artifact : MonoBehaviour
         
         Debug.Log("list entered");
         m_gameObject.SetActive(false);
+        Player.expPoints += 100;
         
     }
 
