@@ -6,7 +6,8 @@ using UnityEngine.SceneManagement;
 using TMPro;
 public class DialogueManager : MonoBehaviour
 {
-    
+    public GameObject techniquesCanvas;
+    public GameObject dialogueTrigger;
     public Image avatarImage;
     public TextMeshProUGUI avatarName;
     public TextMeshProUGUI dialogueText;
@@ -77,7 +78,10 @@ public class DialogueManager : MonoBehaviour
         }
         else if (Input.GetKeyDown(KeyCode.M) && isActive == true)
         {
-            SceneManager.LoadScene((int)Scenes.TigerClaw);
+            techniquesCanvas.SetActive(true);
+            Diggggg diggggg = FindObjectOfType<Diggggg>();
+            diggggg.enabled = false;
+            dialogueTrigger.SetActive(false);
         }
 
     }
