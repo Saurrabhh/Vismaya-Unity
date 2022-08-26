@@ -21,7 +21,7 @@ public class Diggggg : MonoBehaviour
     public ActionType action = ActionType.Dig;
     [Range(0, 7)] public int textureIndex;
     [Range(0.5f, 10f)] public float size = 4f;
-    [Range(0f, 1f)] public float opacity = 0.5f;
+    [Range(0f, 2f)] public float opacity = 0.5f;
 
     [Header("Persistence parameters (make sure persistence is enabled in Digger Master Runtime)")]
     public KeyCode keyToPersistData = KeyCode.P;
@@ -85,7 +85,7 @@ public class Diggggg : MonoBehaviour
     {
         GetComponent<ThirdPersonController>().enabled = false;
         animator.SetTrigger("Dig");
-        yield return new WaitForSeconds(clip.length);
+        yield return new WaitForSeconds((clip.length/0.25f));
 
         if (editAsynchronously)
         {
